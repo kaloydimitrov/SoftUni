@@ -26,3 +26,42 @@ print(", ".join(stack))
 
 # --------------------------------------------------------------------------------------------
 
+from collections import deque
+
+food_quantity = int(input())
+orders = deque([int(x) for x in input().split()])
+
+print(max(orders))
+
+while orders:
+    current_order = orders[0]
+
+    if current_order > food_quantity:
+        break
+
+    food_quantity -= current_order
+    orders.popleft()
+
+if orders:
+    print(f"Orders left: {' '.join([str(x) for x in orders])}")
+else:
+    print("Orders complete")
+
+# --------------------------------------------------------------------------------------------
+
+clothes = [int(x) for x in input().split()]
+rack_capacity = int(input())
+
+current_rack_capacity = rack_capacity
+rack_counter = 1
+
+while clothes:
+    piece_of_clothing = clothes[-1]
+    if piece_of_clothing > current_rack_capacity:
+        rack_counter += 1
+        current_rack_capacity = rack_capacity
+    else:
+        current_rack_capacity -= piece_of_clothing
+        clothes.pop()
+
+print(rack_counter)
