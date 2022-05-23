@@ -68,19 +68,19 @@ print(f"{water} liters left")
 
 from collections import deque
 
-kids = deque(input().split())
-
+people = deque(input().split())
 toss = int(input())
-counter = 0
 
-while len(kids) > 1:
-    kid = kids.popleft()
-    counter += 1
+counter = 1
 
-    if counter == toss:
+while people:
+    if len(people) == 1:
+        print(f"Last is {people.popleft()}")
+    elif counter == toss:
+        print(f"Removed {people.popleft()}")
         counter = 0
-        print(f"Removed {kid}")
     else:
-        kids.append(kid)
+        current = people.popleft()
+        people.append(current)
 
-print("Last is " + kids[0])
+    counter += 1
