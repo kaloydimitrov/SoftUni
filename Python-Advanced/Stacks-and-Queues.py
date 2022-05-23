@@ -1,40 +1,37 @@
 string = list(input())
-answer = ''
 
 while string:
-    char = string.pop()
-    answer += char
-
-print(answer)
+    print(string.pop(), end="")
 
 # --------------------------------------------------------------------------------------------
 
 expression = input()
+
 stack = []
 
 for index in range(len(expression)):
-    if expression[index] == '(':
+    if expression[index] == "(":
         stack.append(index)
-    elif expression[index] == ')':
-        bracket = stack.pop()
-        print(expression[bracket:index + 1])
+    elif expression[index] == ")":
+        print(expression[stack.pop():index + 1])
 
 # --------------------------------------------------------------------------------------------
 
 from collections import deque
 
-q = deque()
+people = deque()
 
 while True:
     command = input()
-    if command == 'Paid':
-        while q:
-            print(q.popleft())
-    elif command == 'End':
-        print(f"{len(q)} people remaining.")
+    if command == "End":
+        print(f"{len(people)} people remaining.")
         break
+    elif command == "Paid":
+        while people:
+            print(people.popleft())
     else:
-        q.append(command)
+        people.append(command)
+
 
 # --------------------------------------------------------------------------------------------
 
