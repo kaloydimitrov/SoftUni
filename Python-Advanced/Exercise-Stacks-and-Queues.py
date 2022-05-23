@@ -65,3 +65,5 @@ while clothes:
         clothes.pop()
 
 print(rack_counter)
+
+

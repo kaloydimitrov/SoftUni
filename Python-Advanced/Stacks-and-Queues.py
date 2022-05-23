@@ -40,31 +40,32 @@ while True:
 
 from collections import deque
 
+queue = deque()
 water = int(input())
-people = deque()
 
 command = input()
 
 while command != "Start":
-    people.append(command)
+    queue.append(command)
     command = input()
 
 second_command = input()
 
 while second_command != "End":
     if "refill" in second_command:
-        water += int(second_command.split()[1])
+        data = int(second_command.split()[1])
+        water += data
     else:
-        person = people.popleft()
-        if int(second_command) > water:
-            print(f"{person} must wait")
+        int_water = int(second_command)
+        if int_water <= water:
+            water -= int_water
+            print(f"{queue.popleft()} got water")
         else:
-            print(f"{person} got water")
-            water -= int(second_command)
+            print(f"{queue.popleft()} must wait")
 
     second_command = input()
 
-print(str(water) + " liters left")
+print(f"{water} liters left")
 
 # --------------------------------------------------------------------------------------------
 
