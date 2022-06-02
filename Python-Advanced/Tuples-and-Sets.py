@@ -92,7 +92,3 @@ print(len(vips) + len(regs))
 
 [print(x) for x in sorted(vips)]
 [print(x) for x in sorted(regs)]
-
-# ------------------------------------------------------------------------
-
-
