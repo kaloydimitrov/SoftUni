@@ -35,7 +35,33 @@ print(abs(sum(pr_sum) - sum(sc_sum)))
 
 # ------------------------------------------------------------------------------------------
 
-pass
+rows, cols = [int(x) for x in input().split(" ")]
+
+matrix = []
+
+for _ in range(rows):
+    matrix.append(input().split(" "))
+
+
+def are_equal(items):
+    item = items[0]
+    count = items.count(item)
+    if count == len(items):
+        return True
+    else:
+        return False
+
+
+count_of_squares = 0
+
+for row in range(rows - 1):
+    for col in range(cols - 1):
+        current_square = [matrix[row][col], matrix[row][col + 1], matrix[row + 1][col], matrix[row + 1][col + 1]]
+        result = are_equal(current_square)
+        if result:
+            count_of_squares += 1
+
+print(count_of_squares)
 
 # ------------------------------------------------------------------------------------------
 
@@ -46,22 +72,27 @@ matrix = []
 for _ in range(r):
     matrix.append([int(x) for x in input().split(" ")])
 
-biggest_square = 0
+biggest_square = -20
 biggest_row = 0
 biggest_col = 0
 
 for row in range(r - 2):
     for col in range(c - 2):
-        square = matrix[row][col] + matrix[row][col + 1] + matrix[row][col + 2] + matrix[row + 1][col] + matrix[row + 1][col + 1] + matrix[row + 1][col + 2] + matrix[row + 2][col] + matrix[row + 2][col + 1] + matrix[row + 2][col + 2]
+        square = matrix[row][col] + matrix[row][col + 1] + matrix[row][col + 2] + matrix[row + 1][col] + \
+                 matrix[row + 1][col + 1] + matrix[row + 1][col + 2] + matrix[row + 2][col] + matrix[row + 2][col + 1] + \
+                 matrix[row + 2][col + 2]
         if square > biggest_square:
             biggest_square = square
             biggest_row = row
             biggest_col = col
 
 print(f"Sum = {biggest_square}")
-print(f"{matrix[biggest_row][biggest_col]} {matrix[biggest_row][biggest_col + 1]} {matrix[biggest_row][biggest_col + 2]}")
-print(f"{matrix[biggest_row + 1][biggest_col]} {matrix[biggest_row + 1][biggest_col + 1]} {matrix[biggest_row + 1][biggest_col + 2]}")
-print(f"{matrix[biggest_row + 2][biggest_col]} {matrix[biggest_row + 2][biggest_col + 1]} {matrix[biggest_row + 2][biggest_col + 2]}")
+print(
+    f"{matrix[biggest_row][biggest_col]} {matrix[biggest_row][biggest_col + 1]} {matrix[biggest_row][biggest_col + 2]}")
+print(
+    f"{matrix[biggest_row + 1][biggest_col]} {matrix[biggest_row + 1][biggest_col + 1]} {matrix[biggest_row + 1][biggest_col + 2]}")
+print(
+    f"{matrix[biggest_row + 2][biggest_col]} {matrix[biggest_row + 2][biggest_col + 1]} {matrix[biggest_row + 2][biggest_col + 2]}")
 
 # ------------------------------------------------------------------------------------------
 
@@ -70,7 +101,6 @@ rows, cols = [int(x) for x in input().split(" ")]
 for r in range(rows):
     first_symbol = chr(97 + r)
     for c in range(cols):
-
         second_symbol = chr(97 + r + c)
         print(f"{first_symbol}{second_symbol}{first_symbol}", end=" ")
 
@@ -120,7 +150,6 @@ for r in range(rows):
     matrix.append([])
     for _ in range(cols):
         matrix[r].append(0)
-
 
 string = input()
 string1 = deque(list(string))
