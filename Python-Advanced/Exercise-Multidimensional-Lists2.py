@@ -129,40 +129,33 @@ up_down_left_right = {
     "right": lambda a, b: (a, b + 1)
 }
 
-c = bunny_row
-d = bunny_col
-
-all_actions = {
-    "up": [],
-    "down": [],
-    "left": [],
-    "right": []
-}
-
 biggest_key = ""
 biggest_value = -math.inf
+biggest_steps = []
 
 for action in up_down_left_right:
+    row = bunny_row
+    col = bunny_col
+
     current_sum = 0
-    c, d = up_down_left_right[action](c, d)
-    while 0 <= c < size and 0 <= d < size and matrix[c][d] != "X":
-        current_sum += int(matrix[c][d])
-        all_actions[action].append(f"[{c}, {d}]")
-        c, d = up_down_left_right[action](c, d)
+    current_steps = []
 
-    if all_actions[action]:
-        all_actions[action].append(current_sum)
+    row, col = up_down_left_right[action](row, col)
 
-    c = bunny_row
-    d = bunny_col
+    while 0 <= row < size and 0 <= col < size and matrix[row][col] != "X":
+        current_sum += int(matrix[row][col])
+        current_steps.append(f"[{row}, {col}]")
 
-    if current_sum > biggest_value and all_actions[action]:
-        biggest_value = current_sum
+        row, col = up_down_left_right[action](row, col)
+
+    if current_sum > biggest_value and current_steps:
         biggest_key = action
+        biggest_value = current_sum
+        biggest_steps = current_steps
 
 print(biggest_key)
-for item in all_actions[biggest_key]:
-    print(item)
+[print(x) for x in biggest_steps]
+print(biggest_value)
 
 # --------------------------------------------------
 
