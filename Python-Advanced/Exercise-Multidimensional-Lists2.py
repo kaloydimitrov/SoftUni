@@ -159,4 +159,64 @@ print(biggest_value)
 
 # --------------------------------------------------
 
+size = int(input())
+
+matrix = []
+
+alice_row = 0
+alice_col = 0
+
+for r in range(size):
+    current_col = input().split(" ")
+    matrix.append(current_col)
+
+    for c in range(size):
+        if current_col[c] == "A":
+            matrix[r][c] = "*"
+            alice_row = r
+            alice_col = c
+
+
+up_down_left_right = {
+    "up": lambda a, b: (a - 1, b),
+    "down": lambda a, b: (a + 1, b),
+    "left": lambda a, b: (a, b - 1),
+    "right": lambda a, b: (a, b + 1)
+}
+
+
+bags_of_tea = 0
+alice_made_it = True
+
+while True:
+    current_command = input()
+
+    alice_row, alice_col = up_down_left_right[current_command](alice_row, alice_col)
+    if alice_row < 0 or alice_col < 0 or alice_row >= size or alice_col >= size:
+        alice_made_it = False
+        break
+
+    current_symbol = matrix[alice_row][alice_col]
+    matrix[alice_row][alice_col] = "*"
+
+    if current_symbol == "R":
+        alice_made_it = False
+        break
+
+    if current_symbol.isnumeric():
+        bags_of_tea += int(current_symbol)
+        if bags_of_tea >= 10:
+            break
+
+
+if alice_made_it:
+    print("She did it! She went to the party.")
+else:
+    print("Alice didn't make it to the tea party.")
+
+for print_row in matrix:
+    print(" ".join(print_row))
+
+# --------------------------------------------------
+
 
