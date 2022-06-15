@@ -167,3 +167,56 @@ for row in range(rows):
 
 for print_row in matrix:
     print("".join(print_row))
+
+# ------------------------------------------------------------------------------------------
+
+size = int(input())
+
+matrix = []
+
+for _ in range(size):
+    matrix.append([int(x) for x in input().split()])
+
+bombs_rows_cords = input().split()
+dead_cells = []
+
+
+def cell_changer(r, c, v):
+    if 0 <= r < size and 0 <= c < size and f"{r} {c}" not in dead_cells:
+        matrix[r][c] -= v
+        if matrix[r][c] <= 0:
+            dead_cells.append(f"{r} {c}")
+
+
+for cord in bombs_rows_cords:
+    row, col = (int(x) for x in cord.split(","))
+    dead_cells.append(f"{row} {col}")
+    value = matrix[row][col]
+
+    cell_changer(row - 1, col, value)
+    cell_changer(row + 1, col, value)
+    cell_changer(row, col - 1, value)
+    cell_changer(row, col + 1, value)
+    cell_changer(row - 1, col - 1, value)
+    cell_changer(row - 1, col + 1, value)
+    cell_changer(row + 1, col - 1, value)
+    cell_changer(row + 1, col + 1, value)
+
+    matrix[row][col] = 0
+
+alive_cells = 0
+alive_cells_sum = 0
+
+for row in range(size):
+    for col in range(size):
+        if matrix[row][col] > 0:
+            alive_cells += 1
+            alive_cells_sum += matrix[row][col]
+
+print(f"Alive cells: {alive_cells}")
+print(f"Sum: {alive_cells_sum}")
+[print(" ".join([str(y) for y in x])) for x in matrix]
+
+# ------------------------------------------------------------------------------------------
+
+
