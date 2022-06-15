@@ -176,14 +176,12 @@ for r in range(size):
             alice_row = r
             alice_col = c
 
-
 up_down_left_right = {
     "up": lambda a, b: (a - 1, b),
     "down": lambda a, b: (a + 1, b),
     "left": lambda a, b: (a, b - 1),
     "right": lambda a, b: (a, b + 1)
 }
-
 
 bags_of_tea = 0
 alice_made_it = True
@@ -208,7 +206,6 @@ while True:
         if bags_of_tea >= 10:
             break
 
-
 if alice_made_it:
     print("She did it! She went to the party.")
 else:
@@ -219,4 +216,170 @@ for print_row in matrix:
 
 # --------------------------------------------------
 
+matrix = []
 
+my_row = 0
+my_col = 0
+
+start_x_count = 0
+
+for r in range(5):
+    current_col = input().split(" ")
+    matrix.append(current_col)
+    for c in range(5):
+        if current_col[c] == "A":
+            my_row = r
+            my_col = c
+        elif current_col[c] == "x":
+            start_x_count += 1
+
+up_down_left_right = {
+    "up": lambda a, b: (a - 1, b),
+    "down": lambda a, b: (a + 1, b),
+    "left": lambda a, b: (a, b - 1),
+    "right": lambda a, b: (a, b + 1)
+}
+
+shot_targets = []
+mid_x_count = 0
+
+for _ in range(int(input())):
+    command = input().split()
+    action = command[0]
+    turn = command[1]
+
+    if action == "shoot":
+        shoot_row, shoot_col = my_row, my_col
+        while True:
+            shoot_row, shoot_col = up_down_left_right[turn](shoot_row, shoot_col)
+            if shoot_row < 0 or shoot_col < 0 or shoot_row >= 5 or shoot_col >= 5:
+                break
+            if matrix[shoot_row][shoot_col] == "x":
+                shot_targets.append(f"[{shoot_row}, {shoot_col}]")
+                matrix[shoot_row][shoot_col] = "."
+                break
+
+    elif action == "move":
+        steps = int(command[2])
+        next_row, next_col = my_row, my_col
+
+        if turn == "up":
+            next_row -= steps
+        if turn == "down":
+            next_row += steps
+        if turn == "left":
+            next_col -= steps
+        if turn == "right":
+            next_col += steps
+
+        if next_row < 0 or next_col < 0 or next_row >= 5 or next_col >= 5 or matrix[next_row][next_col] != ".":
+            continue
+
+        my_row, my_col = next_row, next_col
+
+    for row in range(5):
+        for col in range(5):
+            if matrix[row][col] == "x":
+                mid_x_count += 1
+
+    if mid_x_count == 0:
+        break
+
+    mid_x_count = 0
+
+end_x_count = 0
+
+for row in range(5):
+    for col in range(5):
+        if matrix[row][col] == "x":
+            end_x_count += 1
+
+if end_x_count == 0:
+    print(f"Training completed! All {start_x_count} targets hit.")
+else:
+    print(f"Training not completed! {end_x_count} targets left.")
+
+[print(x) for x in shot_targets]
+
+# --------------------------------------------------
+
+presents = int(input())
+size = int(input())
+
+santa_row = 0
+santa_col = 0
+
+matrix = []
+
+nice_kids = 0
+
+for r in range(size):
+    line = input().split()
+    matrix.append(line)
+
+    for c in range(size):
+        if line[c] == "S":
+            santa_row = r
+            santa_col = c
+        elif line[c] == "V":
+            nice_kids += 1
+
+matrix[santa_row][santa_col] = "-"
+
+up_down_left_right = {
+    "up": lambda a, b: (a - 1, b),
+    "down": lambda a, b: (a + 1, b),
+    "left": lambda a, b: (a, b - 1),
+    "right": lambda a, b: (a, b + 1)
+}
+
+
+def count_nice_kids():
+    n_kids = 0
+    for row in range(size):
+        for col in range(size):
+            if matrix[row][col] == "V":
+                n_kids += 1
+
+    return n_kids
+
+
+while True:
+    direction = input()
+    if direction == "Christmas morning":
+        break
+
+    santa_row, santa_col = up_down_left_right[direction](santa_row, santa_col)
+
+    if matrix[santa_row][santa_col] == "V":
+        presents -= 1
+
+    elif matrix[santa_row][santa_col] == "C":
+        if matrix[santa_row - 1][santa_col] in "VX":
+            matrix[santa_row - 1][santa_col] = "-"
+            presents -= 1
+        if matrix[santa_row + 1][santa_col] in "VX":
+            matrix[santa_row + 1][santa_col] = "-"
+            presents -= 1
+        if matrix[santa_row][santa_col - 1] in "VX":
+            matrix[santa_row][santa_col - 1] = "-"
+            presents -= 1
+        if matrix[santa_row][santa_col + 1] in "VX":
+            matrix[santa_row][santa_col + 1] = "-"
+            presents -= 1
+
+    matrix[santa_row][santa_col] = "-"
+
+    if presents <= 0 and count_nice_kids() > 0:
+        print("Santa ran out of presents!")
+        break
+    if presents <= 0:
+        break
+
+matrix[santa_row][santa_col] = "S"
+[print(" ".join(x)) for x in matrix]
+
+if count_nice_kids() <= 0:
+    print(f"Good job, Santa! {nice_kids} happy nice kid/s.")
+else:
+    print(f"No presents for {count_nice_kids()} nice kid/s.")
