@@ -219,4 +219,53 @@ print(f"Sum: {alive_cells_sum}")
 
 # ------------------------------------------------------------------------------------------
 
+import sys
+
+size = int(input())
+directions = input().split()
+
+matrix = []
+
+miner_row = 0
+miner_col = 0
+
+c_count = 0
+c_collected = 0
+
+for r in range(size):
+    line = input().split()
+    matrix.append(line)
+    for c in range(size):
+        if matrix[r][c] == "s":
+            miner_row = r
+            miner_col = c
+        elif matrix[r][c] == "c":
+            c_count += 1
+
+up_down_left_right = {
+    "up": lambda a, b: (a - 1, b),
+    "down": lambda a, b: (a + 1, b),
+    "left": lambda a, b: (a, b - 1),
+    "right": lambda a, b: (a, b + 1)
+}
+
+for direction in directions:
+    next_row, next_col = up_down_left_right[direction](miner_row, miner_col)
+    if next_row >= size or next_col >= size or next_row < 0 or next_col < 0:
+        continue
+    miner_row, miner_col = next_row, next_col
+    if matrix[miner_row][miner_col] == "c":
+        matrix[miner_row][miner_col] = "*"
+        c_collected += 1
+        if c_collected == c_count:
+            print(f"You collected all coal! ({miner_row}, {miner_col})")
+            sys.exit()
+    elif matrix[miner_row][miner_col] == "e":
+        print(f"Game over! ({miner_row}, {miner_col})")
+        sys.exit()
+
+print(f"{c_count - c_collected} pieces of coal left. ({miner_row}, {miner_col})")
+
+# ------------------------------------------------------------------------------------------
+
 
