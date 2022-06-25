@@ -1,4 +1,4 @@
-#--------------------------------------------------------------------------------------------   01. Moon
+# --------------------------------------------------------------------------------------------   01. Moon
 
 import math
 
@@ -14,7 +14,7 @@ fuel = (needed_liters_of_fuel * round_trip) / 100
 print(total_time)
 print(int(fuel))
 
-#--------------------------------------------------------------------------------------------   02. Beer And Chips
+# --------------------------------------------------------------------------------------------   02. Beer And Chips
 
 import math
 
@@ -33,9 +33,9 @@ if total_sum <= budget:
 else:
     dis = total_sum - budget
     print(f"{name} needs {dis:.2f} more leva!")
-    
-#--------------------------------------------------------------------------------------------   03. Computer Room
-    
+
+# --------------------------------------------------------------------------------------------   03. Computer Room
+
 month = input()
 hours = int(input())
 people_in_group = int(input())
@@ -62,7 +62,7 @@ print(f"Price per person for one hour: {sum_per_hour:.2f}")
 total_price = (sum_per_hour * people_in_group) * hours
 print(f"Total cost of the visit: {total_price:.2f}")
 
-#--------------------------------------------------------------------------------------------   04. Cat Food
+# --------------------------------------------------------------------------------------------   04. Cat Food
 
 cats = int(input())
 total_food = 0
@@ -70,7 +70,7 @@ cats_in_group1 = 0
 cats_in_group2 = 0
 cats_in_group3 = 0
 
-for r in range (cats):
+for r in range(cats):
     food = float(input())
     total_food += food
     if 100 <= food < 200:
@@ -88,7 +88,7 @@ print(f"Group 2: {cats_in_group2} cats.")
 print(f"Group 3: {cats_in_group3} cats.")
 print(f"Price for food per day: {price_for_food_per_day:.2f} lv.")
 
-#--------------------------------------------------------------------------------------------   05. Puppy Care
+# --------------------------------------------------------------------------------------------   05. Puppy Care
 
 purchased_food_for_puppy = int(input()) * 1000
 total_food_puppy_ate = 0
@@ -104,9 +104,9 @@ if purchased_food_for_puppy >= total_food_puppy_ate:
 else:
     dis = total_food_puppy_ate - purchased_food_for_puppy
     print(f"Food is not enough. You need {dis} grams more.")
-    
-#--------------------------------------------------------------------------------------------   06. Gold Mine
-    
+
+# --------------------------------------------------------------------------------------------   06. Gold Mine
+
 number_of_locations = int(input())
 average_yield = 0
 
