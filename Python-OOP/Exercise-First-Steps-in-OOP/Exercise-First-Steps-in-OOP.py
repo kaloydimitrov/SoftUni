@@ -82,7 +82,7 @@ class Flower:
 
 
 class SteamUser:
-    def __init__(self, username, games):
+    def __init__(self, username: str, games: list):
         self.username = username
         self.games = games
         self.played_hours = 0
@@ -100,7 +100,7 @@ class SteamUser:
         return f"{game} is already in your library"
 
     def status(self):
-        return f"{self.username} had {len(self.games)} games. Total play time: {self.played_hours}"
+        return f"{self.username} has {len(self.games)} games. Total play time: {self.played_hours}"
 
 # ---------------------------------------------------------------------------
 
