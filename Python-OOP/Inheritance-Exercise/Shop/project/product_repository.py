@@ -10,17 +10,17 @@ class ProductRepository:
 
     def find(self, product_name):
         for product in self.products:
-            if product.name == product_name:
+            if product.__name == product_name:
                 return product
 
     def remove(self, product_name):
         for product in self.products:
-            if product.name == product_name:
+            if product.__name == product_name:
                 self.products.remove(product)
 
     def __repr__(self):
         result = ""
         for product in self.products:
-            result += f"\n{product.name}: {product.quantity}"
+            result += f"\n{product.__name}: {product.quantity}"
 
         return result.strip()
