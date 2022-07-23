@@ -90,8 +90,3 @@ class Integer:
         if not isinstance(value, str):
             return "wrong type"
         return cls(int(value))
-
-# --------------------------------------------------------------------------
-
-
-
