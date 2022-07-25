@@ -55,20 +55,18 @@ class MovieWorld:
 
         if dvd in customer.rented_dvds:
             customer.rented_dvds.remove(dvd)
+            dvd.is_rented = False
             return f"{customer.name} has successfully returned {dvd.name}"
         return f"{customer.name} does not have that DVD"
 
     def __repr__(self):
         result = ""
-
-        c_counter = 1
         for customer in self.customers:
-            result += f"{c_counter}: {repr(customer)}"
-        c_counter += 1
+            result += repr(customer) + "\n"
 
         d_counter = 1
         for dvd in self.dvds:
-            result += f"{d_counter}: {repr(dvd)}"
+            result += repr(dvd) + "\n"
         d_counter += 1
 
         return result
