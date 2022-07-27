@@ -68,3 +68,5 @@ class Rectangle(Shape, ABC):
 
     def calculate_perimeter(self):
         return 2 * (self.__height + self.__width)
+
+# ---------------------------------------------------------------------------------------
