@@ -27,6 +27,12 @@ class TestStudent(TestCase):
         self.assertEqual(s.enroll("course2", ["note1", "note2"], "Y"), "Course and course notes have been added.")
         self.assertDictEqual(s.courses, {"course1": ["note1", "note2"], "course2": ["note1", "note2"]})
 
+    def test_enroll_message2_2(self):
+        s = Student("Stoyan", {"course1": ["note1", "note2"]})
+
+        self.assertEqual(s.enroll("course2", ["note1", "note2"], ""), "Course and course notes have been added.")
+        self.assertDictEqual(s.courses, {"course1": ["note1", "note2"], "course2": ["note1", "note2"]})
+
     def test_enroll_message3(self):
         s = Student("Stoyan", {})
 
