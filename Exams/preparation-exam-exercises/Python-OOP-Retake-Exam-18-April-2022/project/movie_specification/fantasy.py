@@ -4,11 +4,7 @@ from project.user import User
 
 class Fantasy(Movie):
     def __init__(self, title, year, owner: User, age_restriction=6):
-        self.year = year
-        self.title = title
-        self.owner = owner
-        self.age_restriction = age_restriction
-        self.likes = 0
+        super().__init__(title, year, owner, age_restriction)
 
     @property
     def age_restriction(self):

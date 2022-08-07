@@ -98,7 +98,9 @@ class MovieApp:
 
         result = ""
 
-        for movie in sorted(self.movies_collection, key=lambda x: (-x.year, x.title)):
+        sort = sorted(self.movies_collection, key=lambda x: (-x.year, x.title))
+
+        for movie in sort:
             result += movie.details() + "\n"
 
         return result.strip()

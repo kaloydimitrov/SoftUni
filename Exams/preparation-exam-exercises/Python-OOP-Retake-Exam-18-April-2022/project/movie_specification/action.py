@@ -4,11 +4,7 @@ from project.user import User
 
 class Action(Movie):
     def __init__(self, title, year, owner: User, age_restriction=12):
-        self.year = year
-        self.title = title
-        self.owner = owner
-        self.age_restriction = age_restriction
-        self.likes = 0
+        super().__init__(title, year, owner, age_restriction)
 
     @property
     def age_restriction(self):
