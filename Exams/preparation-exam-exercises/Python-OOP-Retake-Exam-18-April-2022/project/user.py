@@ -27,7 +27,19 @@ class User:
 
     def __str__(self):
         result = f"Username: {self.username}, Age: {self.age}" + "\n"
+
         result += "Liked movies:" + "\n"
-        [m.details() for m in self.movies_liked]
+        if self.movies_liked:
+            for m in self.movies_liked:
+                result += m.details() + "\n"
+        else:
+            result += "No movies liked." + "\n"
+
         result += "Owned movies:" + "\n"
-        [m.details() for m in self.movies_owned]
+        if self.movies_owned:
+            for m in self.movies_owned:
+                result += m.details() + "\n"
+        else:
+            result += "No movies owned." + "\n"
+
+        return result.strip()
