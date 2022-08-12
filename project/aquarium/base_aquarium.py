@@ -1,5 +1,7 @@
 from abc import ABC, abstractmethod
 
+from project.decoration.base_decoration import BaseDecoration
+
 
 class BaseAquarium(ABC):
     @abstractmethod
@@ -47,3 +49,4 @@ class BaseAquarium(ABC):
         result += f"Fish: {' '.join(fish_names)} "
 
         return result
+
