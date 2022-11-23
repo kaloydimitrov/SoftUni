@@ -7,4 +7,8 @@ def home(request):
 
 
 def department(request):
-    return HttpResponse('This is department')
+    return HttpResponse('This is the default department')
+
+
+def department_details(request, department_id):
+    return HttpResponse(f'This is department {department_id}')
