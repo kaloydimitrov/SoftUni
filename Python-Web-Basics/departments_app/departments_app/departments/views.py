@@ -27,3 +27,12 @@ def department_details_html(request, department_id):
            '</html></body></h1>'
 
     return HttpResponse(html)
+
+
+def department_details_template(request, department_id):
+    context = {
+        'department_name': 'random name',
+        'department_id': department_id
+    }
+
+    return render(request=request, template_name='departments/main.html', context=context)
