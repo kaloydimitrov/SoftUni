@@ -1,5 +1,5 @@
-from django.shortcuts import render
-from django.http import HttpResponse
+from django.shortcuts import render, redirect
+from django.http import HttpResponse, HttpResponseNotFound
 
 
 def home(request):
@@ -36,3 +36,11 @@ def department_details_template(request, department_id):
     }
 
     return render(request=request, template_name='departments/main.html', context=context)
+
+
+def redirect_to_home(request):
+    return redirect(to='http://127.0.0.1:8000/')
+
+
+def raising_error(request):
+    return HttpResponseNotFound('This is not found')
