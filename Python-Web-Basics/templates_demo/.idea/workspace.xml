@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="03560811-20c0-4756-b83b-11bed86646ec" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/templates_demo/web_demo/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates_demo/web_demo/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates_demo/web_demo/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates_demo/web_demo/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates_demo/web_demo/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates_demo/web_demo/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates_demo/web_demo/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates_demo/web_demo/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../template_demo1/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../template_demo1/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../template_demo1/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../template_demo1/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../template_demo1/.idea/template_demo1.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../template_demo1/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../template_demo1/manage.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../template_demo1/template_demo1/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../template_demo1/template_demo1/asgi.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../template_demo1/template_demo1/settings.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../template_demo1/template_demo1/urls.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../template_demo1/template_demo1/web/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../template_demo1/template_demo1/web/admin.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../template_demo1/template_demo1/web/apps.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../template_demo1/template_demo1/web/migrations/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../template_demo1/template_demo1/web/models.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../template_demo1/template_demo1/web/tests.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../template_demo1/template_demo1/web/urls.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../template_demo1/template_demo1/web/views.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../template_demo1/template_demo1/wsgi.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates_demo/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/templates_demo/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates_demo/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/templates_demo/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates_demo/web/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates_demo/web/admin.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates_demo/web/apps.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates_demo/web/migrations/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates_demo/web/models.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates_demo/web/tests.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates_demo/web/urls.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates_demo/web/views.py" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2I42D11iIKOlVAdmaiA2yYlL92j" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\kaloian\OneDrive\Documents\GitHub\SoftUni\Python-Web-Basics\templates_demo\templates_demo" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="templates_demo" type="Python.DjangoServer" factoryName="Django server">
+      <module name="templates_demo" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="DJANGO_SETTINGS_MODULE" value="templates_demo.settings" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <option name="port" value="8000" />
+      <option name="host" value="" />
+      <option name="additionalOptions" value="" />
+      <option name="browserUrl" value="" />
+      <option name="runTestServer" value="false" />
+      <option name="runNoReload" value="false" />
+      <option name="useCustomRunCommand" value="false" />
+      <option name="customRunCommand" value="" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="03560811-20c0-4756-b83b-11bed86646ec" name="Changes" comment="" />
+      <created>1669426413329</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1669426413329</updated>
+      <workItem from="1669426436877" duration="1829000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+</project>

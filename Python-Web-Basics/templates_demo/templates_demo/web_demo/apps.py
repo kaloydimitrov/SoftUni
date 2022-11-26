@@ -1,6 +1,6 @@
 from django.apps import AppConfig
 
 
-class WebConfig(AppConfig):
+class WebDemoConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'template_demo1.web'
+    name = 'templates_demo.web_demo'
