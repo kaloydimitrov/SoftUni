@@ -2,15 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="03560811-20c0-4756-b83b-11bed86646ec" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/templates/home.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/tags/nav.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates_demo/web_demo/tamplatetags/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates_demo/web_demo/tamplatetags/filters.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates_demo/web_demo/tamplatetags/tags.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates_demo/web_demo/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/templates_demo/web_demo/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates_demo/web_demo/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/templates_demo/web_demo/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,16 +31,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "DefaultHtmlFileTemplate": "HTML File",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/kaloian/OneDrive/Documents/GitHub/SoftUni/Python-Web-Basics/templates_demo"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/kaloian/OneDrive/Documents/GitHub/SoftUni/Python-Web-Basics/templates_demo&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\kaloian\OneDrive\Documents\GitHub\SoftUni\Python-Web-Basics\templates_demo\templates_demo\web_demo" />
@@ -119,7 +111,8 @@
       <workItem from="1669426436877" duration="6095000" />
       <workItem from="1669494151221" duration="10314000" />
       <workItem from="1669505930710" duration="2947000" />
-      <workItem from="1669512920534" duration="724000" />
+      <workItem from="1669512920534" duration="995000" />
+      <workItem from="1669547721279" duration="91000" />
     </task>
     <servers />
   </component>
