@@ -1,11 +1,15 @@
 import random
 
 from django.http import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
 
 def home(request):
-    return HttpResponse('This is home')
+    context = {
+
+    }
+
+    return render(request, 'home.html', context)
 
 
 def display_typo(request, typo):
@@ -32,6 +36,25 @@ def index(request):
     context = {
         'random_color': random.choice(['red', 'blue', 'green']),
         'random_number': random.randint(0, 100),
+
+        'random_numbers': [random.randint(0, 100), random.randint(0, 100), random.randint(0, 100)],
+
+
+        'dictionary': {
+            'val1': 1,
+            'val2': 2,
+            'val3': 3
+        },
+
+        'text': "If you're looking for random paragraphs, you've come to the right place. ",
+
+        'colors': ['red', 'blue', 'green'],
+
+        'value': False,
+
+        'float': 1.2536304578,
+
+        'values': [1, 5, 10, 2, 7],
     }
 
     return render(request, 'index.html', context)

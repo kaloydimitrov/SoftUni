@@ -2,47 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="03560811-20c0-4756-b83b-11bed86646ec" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/templates_demo/web_demo/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates_demo/web_demo/admin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates_demo/web_demo/apps.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates_demo/web_demo/migrations/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates_demo/web_demo/models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates_demo/web_demo/tests.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates_demo/web_demo/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates_demo/web_demo/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../template_demo1/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../template_demo1/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../template_demo1/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../template_demo1/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../template_demo1/.idea/template_demo1.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../template_demo1/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../template_demo1/manage.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../template_demo1/template_demo1/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../template_demo1/template_demo1/asgi.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../template_demo1/template_demo1/settings.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../template_demo1/template_demo1/urls.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../template_demo1/template_demo1/web/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../template_demo1/template_demo1/web/admin.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../template_demo1/template_demo1/web/apps.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../template_demo1/template_demo1/web/migrations/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../template_demo1/template_demo1/web/models.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../template_demo1/template_demo1/web/tests.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../template_demo1/template_demo1/web/urls.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../template_demo1/template_demo1/web/views.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../template_demo1/template_demo1/wsgi.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/home.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/tags/nav.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates_demo/web_demo/tamplatetags/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates_demo/web_demo/tamplatetags/filters.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates_demo/web_demo/tamplatetags/tags.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates_demo/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/templates_demo/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates_demo/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/templates_demo/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates_demo/web/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates_demo/web/admin.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates_demo/web/apps.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates_demo/web/migrations/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates_demo/web/models.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates_demo/web/tests.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates_demo/web/urls.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates_demo/web/views.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates_demo/web_demo/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/templates_demo/web_demo/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates_demo/web_demo/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/templates_demo/web_demo/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,15 +45,39 @@
     "DefaultHtmlFileTemplate": "HTML File",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false"
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/kaloian/OneDrive/Documents/GitHub/SoftUni/Python-Web-Basics/templates_demo"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\kaloian\OneDrive\Documents\GitHub\SoftUni\Python-Web-Basics\templates_demo\templates_demo\web_demo" />
       <recent name="C:\Users\kaloian\OneDrive\Documents\GitHub\SoftUni\Python-Web-Basics\templates_demo\templates_demo" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Django Server.templates_demo">
+    <configuration name="filters" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="templates_demo" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/templates_demo/web_demo/templatetags" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/templates_demo/web_demo/templatetags/filters.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="templates_demo" type="Python.DjangoServer" factoryName="Django server">
       <module name="templates_demo" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -110,6 +102,11 @@
       <option name="customRunCommand" value="" />
       <method v="2" />
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.filters" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -119,7 +116,10 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1669426413329</updated>
-      <workItem from="1669426436877" duration="1829000" />
+      <workItem from="1669426436877" duration="6095000" />
+      <workItem from="1669494151221" duration="10314000" />
+      <workItem from="1669505930710" duration="2947000" />
+      <workItem from="1669512920534" duration="724000" />
     </task>
     <servers />
   </component>
@@ -139,5 +139,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/templates_demo$filters.coverage" NAME="filters Coverage Results" MODIFIED="1669503467544" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/templates_demo/web_demo/templatetags" />
   </component>
 </project>

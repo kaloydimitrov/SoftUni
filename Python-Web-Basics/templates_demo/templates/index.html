@@ -5,7 +5,46 @@
     <title>Title</title>
 </head>
 <body>
-    <ul>Random color: {{ random_color }}</ul>
-    <ul>Random number: {{ random_number }}</ul>
+<h1>Random color: <span style="color: {{ random_color }}">{{ random_color }}</span></h1>
+<h1>Random number: {{ random_number }}</h1>
+<ul>
+    <h1>Random numbers:</h1>
+    {% for number in random_numbers %}
+        <li>{{ number }}</li>
+        {% if number < 50 %}
+            <i>This number is less than 50</i>
+        {% elif number > 50 %}
+            <i>This number is more than 50</i>
+        {% elif number == 50 %}
+            <i>This number is equal to 50</i>
+        {% endif %}
+    {% endfor %}
+</ul>
+
+<h3>Testing dictionary</h3>
+{{ dictionary.val1 }} {{ dictionary.val2 }} {{ dictionary.val3 }} {{ dictionary.values }} {{ dictionary.keys }}
+
+<h3>Testing filters</h3>
+{{ text|truncatechars:10 }}
+<br>{{ text|truncatewords:5 }}
+<br>{{ colors|join:':|:' }}
+<br>{{ value|default:'nothing' }}
+<br>{{ colors.1|length }}
+<br>{{ float|floatformat:2 }}
+
+
+<h3>Testing tags</h3>
+{% if colors|length < 5 %}
+    Colors length is less than 5
+{% endif %}
+<br>
+{% for color in colors %}
+    <li>{{ color }}</li>
+{% endfor %}
+
+
+<br>
+<br>
+<a href="{% url 'go-to-home' %}">Return to home</a>
 </body>
 </html>
