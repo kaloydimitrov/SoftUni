@@ -14,9 +14,21 @@
         <li>Email: {{ employee.email }}</li>
         <li>Address: {{ employee.address }}</li>
         <li>Salary: {{ employee.salary }}</li>
+        <li>Department: {{ employee.department.name }}</li>
     </ul>
     <h1>--------------------------------------------------</h1>
 {% endfor %}
 <h1>Employees (filters):</h1>
+{% for employee in employees_filter %}
+    <ul>
+        <li>ID: {{ employee.id }} - {{ employee.first_name }} {{ employee.last_name }}</li>
+    </ul>
+{% endfor %}
+<h1>Employee (get):</h1>
+<h7>{{ employees_pk }}</h7>
+<h1>Employee (filter):</h1>
+<h7>{{ employee_department_name }}</h7>
+<h1>Employee (error)</h1>
+<h7>{{ employee_department_name }}</h7>
 </body>
 </html>
