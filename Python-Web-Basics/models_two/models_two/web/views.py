@@ -16,3 +16,8 @@ def employee_details(request):
     }
 
     return render(request, 'index.html', context)
+
+
+def delete_employee(request, pk):
+    employee = Employees.objects.get(pk=pk)
+    employee.delete()
