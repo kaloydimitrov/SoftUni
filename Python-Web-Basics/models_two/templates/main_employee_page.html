@@ -15,6 +15,7 @@
         <li>Address: {{ employee.address }}</li>
         <li>Salary: {{ employee.salary }}</li>
         <li>Department: {{ employee.department.name }}</li>
+        <li>ID: {{ employee.pk }}</li>
     </ul>
     <h1>--------------------------------------------------</h1>
 {% endfor %}
@@ -28,7 +29,7 @@
 <h7>{{ employees_pk }}</h7>
 <h1>Employee (filter):</h1>
 <h7>{{ employee_department_name }}</h7>
-<h1>Employee (error)</h1>
+<h1>Employee (error):</h1>
 <h7>{{ employee_department_name }}</h7>
 </body>
 </html>

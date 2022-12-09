@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+<h1>{{ employee.first_name }} {{ employee.last_name }}:</h1>
+<li>Age: {{ employee.age }}</li>
+<li>Email: {{ employee.email }}</li>
+<li>Address: {{ employee.address }}</li>
+<li>Salary: {{ employee.salary }}</li>
+<li>Department: {{ employee.department.name }}</li>
+<br>
+<a href="http://127.0.0.1:8000/employees/delete/{{ employee.pk }}/">DELETE?</a>
+</body>
+</html>
