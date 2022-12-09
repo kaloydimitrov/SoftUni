@@ -1,6 +1,20 @@
 from django.db import models
 
 
+class TimeInfo(models.Model):
+    class Meta:
+        abstract = True
+
+    created_on = models.DateTimeField(
+        auto_now_add=True,
+        null=True,
+    )
+
+    updated_on = models.DateTimeField(
+        auto_now=True,
+    )
+
+
 class Departments(models.Model):
     name = models.CharField(max_length=30)
 
@@ -21,9 +35,9 @@ LEVELS = (
 )
 
 
-class Employees(models.Model):
+class Employees(TimeInfo, models.Model):
     class Meta:
-        ordering = ('')
+        ordering = ['age', 'pk']
 
     first_name = models.CharField(max_length=30)
     last_name = models.CharField(max_length=30)
@@ -40,7 +54,9 @@ class Employees(models.Model):
         null=True, blank=True,
     )
 
-    project = models.ManyToManyField(Projects)
+    project = models.ManyToManyField(
+        Projects,
+    )
 
     def __str__(self):
         return f"{self.pk} - {self.first_name} {self.last_name}"
