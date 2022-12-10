@@ -1,10 +1,10 @@
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
-from models_two.web.models import Employees
+from models_two.web.models import Employees, Departments
 
 
 def home(request):
-    return HttpResponse('This is home!')
+    return render(request, 'home_page.html')
 
 
 def employee_details(request):
@@ -31,7 +31,7 @@ def employee_delete(request, pk):
 
 def employee_info(request, pk):
     context = {
-        'employee': Employees.objects.get(pk=pk)
+        "employee": Employees.objects.get(pk=pk)
     }
 
     return render(request, 'show_employee_info.html', context)

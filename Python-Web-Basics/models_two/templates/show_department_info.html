@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+{% for dep in departments %}
+<ul>
+    <li><a href="{{ dep.get_absolute_url }}">{{ dep.name }}</a></li>
+</ul>
+{% endfor %}
+</body>
+</html>

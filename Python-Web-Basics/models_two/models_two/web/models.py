@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 
 class TimeInfo(models.Model):
@@ -16,13 +17,20 @@ class TimeInfo(models.Model):
 
 
 class Departments(models.Model):
+    class Meta:
+        verbose_name_plural = 'Departments'
+
     name = models.CharField(max_length=30)
+    slug = models.SlugField(unique=True)
 
     def __str__(self):
         return f"{self.pk} - {self.name}"
 
 
 class Projects(models.Model):
+    class Meta:
+        verbose_name_plural = 'Projects'
+
     name = models.CharField(max_length=30),
     deadline = models.DateField()
 
@@ -38,6 +46,7 @@ LEVELS = (
 class Employees(TimeInfo, models.Model):
     class Meta:
         ordering = ['age', 'pk']
+        verbose_name_plural = 'Employees'
 
     first_name = models.CharField(max_length=30)
     last_name = models.CharField(max_length=30)
@@ -57,6 +66,10 @@ class Employees(TimeInfo, models.Model):
     project = models.ManyToManyField(
         Projects,
     )
+
+    @property
+    def full_name(self):
+        return f'{self.first_name} - {self.last_name}'
 
     def __str__(self):
         return f"{self.pk} - {self.first_name} {self.last_name}"
