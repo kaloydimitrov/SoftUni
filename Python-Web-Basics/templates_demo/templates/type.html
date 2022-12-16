@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Information for <span style="color: red">{{ typo }}</span>:</h1>
+    {% if result %}
+        <h5>Noun:</h5>
+        {% for n in result_nouns %}
+            -{{ n }}
+        {% endfor %}
+
+         <h5>Verb:</h5>
+        {% for v in result_verbs %}
+            -{{ v }}
+        {% endfor %}
+
+    {% else %}
+        No results for <span style="color: red">{{ typo }}</span>
+    {% endif %}
+
+{% endblock %}
