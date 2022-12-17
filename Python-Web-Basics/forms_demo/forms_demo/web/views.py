@@ -9,14 +9,14 @@ def home(request):
 def forms(request):
     if request.method == 'GET':
         form = FirstForm
-    if request.method == 'POST':
+    else:
         form = FirstForm(request.POST)
         if form.is_valid():
             pass
             return redirect('http://127.0.0.1:8000/')
 
     context = {
-        'form': FirstForm,
+        'form': form,
     }
 
     return render(request, 'forms.html', context)
