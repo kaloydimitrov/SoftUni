@@ -2,6 +2,9 @@ from django.http import HttpResponse
 from django.shortcuts import render
 
 
+def index(request):
+    pass
+
 def add_album(request):
     return render(request, 'add-album.html')
 
