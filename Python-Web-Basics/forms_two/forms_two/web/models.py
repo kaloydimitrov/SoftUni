@@ -18,6 +18,7 @@ class Person(models.Model):
         null=True, blank=True,
         upload_to='images',
         )
+    email = models.EmailField(null=True, blank=True)
 
     class Meta:
         ordering = ['first_name']

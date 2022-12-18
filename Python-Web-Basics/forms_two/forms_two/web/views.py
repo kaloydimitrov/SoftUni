@@ -17,6 +17,17 @@ def person(request):
     return render(request, 'users.html', context)
 
 
+def delete_user(request, pk):
+    user = Person.objects.get(pk=pk)
+    user.delete()
+
+    context = {
+        'user': user,
+    }
+
+    return render(request, 'deleted_user.html', context)
+
+
 def index(request):
     if request.method == 'GET':
         form = PersonForm
