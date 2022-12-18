@@ -15,13 +15,13 @@ http://localhost:8000/profile/delete/ - delete profile page
 urlpatterns = (
     path('', index, name='home'),
     path('album/', include([
-        path('add/', add_album, name='add album page'),
-        path('details/<int:id>/', details_album, name='album details page'),
-        path('edit/<int:id>/', edit_album, name='edit album page'),
-        path('delete/<int:id>/', delete_album, name='delete album page'),
+        path('add/', add_album, name='add album'),
+        path('details/<int:pk>/', details_album, name='album details'),
+        path('edit/<int:pk>/', edit_album, name='edit album'),
+        path('delete/<int:pk>/', delete_album, name='delete album'),
     ])),
     path('profile/', include([
-        path('details/', details_profile, name='profile details page'),
-        path('delete/', delete_profile, name='delete profile page'),
+        path('details/', details_profile, name='profile details'),
+        path('delete/', delete_profile, name='delete profile'),
     ]))
 )

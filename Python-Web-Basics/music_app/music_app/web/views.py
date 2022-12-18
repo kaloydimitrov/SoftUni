@@ -1,29 +1,44 @@
 from django.http import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from .models import Profile
+
+
+def get_profile():
+    # try:
+    #     Profile.objects.get()
+    # except:
+    #     return None
+    return True
 
 
 def index(request):
-    pass
+    profile = get_profile
+
+    if profile is None:
+        return render(request, 'core/home-no-profile.html')
+
+    return render(request, 'core/home-with-profile.html')
+
 
 def add_album(request):
-    return render(request, 'add-album.html')
+    return render(request, 'album/add-album.html')
 
 
-def details_album(request):
-    return render(request, 'album-details.html')
+def details_album(request, pk):
+    return render(request, 'album/album-details.html')
 
 
-def edit_album(request):
-    return render(request, 'edit-album.html')
+def edit_album(request, pk):
+    return render(request, 'album/edit-album.html')
 
 
-def delete_album(request):
-    return render(request, 'delete-album.html')
+def delete_album(request, pk):
+    return render(request, 'album/delete-album.html')
 
 
 def details_profile(request):
-    return render(request, 'profile-details.html')
+    return render(request, 'profile/profile-details.html')
 
 
 def delete_profile(request):
-    return render(request, 'profile-delete.html')
+    return render(request, 'profile/profile-delete.html')
