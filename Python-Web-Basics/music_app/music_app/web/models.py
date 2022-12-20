@@ -24,5 +24,8 @@ class Album(models.Model):
     artist = models.CharField(null=False, blank=False, unique=True, max_length=30)
     genre = models.CharField(null=False, blank=False, max_length=30, choices=[(m, m) for m in MUSIC_TYPES])
     description = models.TextField(null=True, blank=True)
-    image_url = models.URLField(null=False, blank=False)
+    image_url = models.URLField(null=False, blank=False, verbose_name='Image URL')
     price = models.FloatField(null=False, blank=False, validators=[validators.MinValueValidator(0.0)])
+
+    class Meta:
+        ordering = ['album_name']
