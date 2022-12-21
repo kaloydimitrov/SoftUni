@@ -32,4 +32,5 @@ urlpatterns = (
     path('details/<int:pk>/', plant_details, name='plant details'),
     path('edit/<int:pk>/', edit_plant, name='plant edit'),
     path('delete/<int:pk>/', delete_plant, name='plant delete'),
+
 )
