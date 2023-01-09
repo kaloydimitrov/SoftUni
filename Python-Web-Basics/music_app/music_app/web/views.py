@@ -1,7 +1,7 @@
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from .models import Profile, Album
-from .forms import ProfileForm, AddAlbumForm, EditAlbumForm, DeleteAlbumForm
+from .forms import *
 
 
 def get_profile():
@@ -25,6 +25,7 @@ def index(request):
 
         context = {
             'form': form,
+            'base_bar': True
         }
 
         return render(request, 'core/home-no-profile.html', context)
@@ -112,9 +113,9 @@ def details_profile(request):
 
 def delete_profile(request):
         if request.method == 'GET':
-            form = ProfileForm()
+            form = DeleteProfileForm()
         else:
-            form = ProfileForm(request.POST)
+            form = DeleteProfileForm(request.POST)
             if form.is_valid():
                 form.save()
                 albums = Album.objects.all()
@@ -128,3 +129,19 @@ def delete_profile(request):
         }
 
         return render(request, 'profile/profile-delete.html', context)
+
+
+def edit_profile(request):
+    if request.method == "GET":
+        form = EditProfileForm()
+    else:
+        form = EditProfileForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('profile details')
+
+    context = {
+        'form': form
+    }
+
+    return render(request, 'profile/edit-profile.html', context)

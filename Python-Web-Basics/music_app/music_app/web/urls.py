@@ -23,5 +23,6 @@ urlpatterns = (
     path('profile/', include([
         path('details/', details_profile, name='profile details'),
         path('delete/', delete_profile, name='delete profile'),
+        path('edit/', edit_profile, name='edit profile')
     ]))
 )

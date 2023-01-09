@@ -16,6 +16,9 @@ class Profile(models.Model):
     email = models.EmailField(null=False, blank=False)
     age = models.IntegerField(null=True, blank=True, validators=[validators.MinValueValidator(0)])
 
+    def __str__(self):
+        return f"ID: {self.pk} | {self.username}"
+
 
 class Album(models.Model):
     MUSIC_TYPES = ("Pop Music", "Jazz Music", "R&B Music", "Rock Music", "Country Music", "Dance Music", "Hip Hop Music", "Other")
@@ -26,6 +29,9 @@ class Album(models.Model):
     description = models.TextField(null=True, blank=True)
     image_url = models.URLField(null=False, blank=False, verbose_name='Image URL')
     price = models.FloatField(null=False, blank=False, validators=[validators.MinValueValidator(0.0)])
+
+    def __str__(self):
+        return f"ID: {self.pk} | {self.album_name}"
 
     class Meta:
         ordering = ['album_name']

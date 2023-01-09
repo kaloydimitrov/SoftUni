@@ -18,7 +18,7 @@
             <div>
                 <div class="text-center">
                     <p class="name">Name: {{ album.album_name }}</p>
-                    <p class="artist">Artist: {{ album.artist }}</p>
+                    <p class="artist">Artist: {{ album.artist|truncatechars:9 }}</p>
                     <p class="genre">Genre: {{ album.genre }}</p>
                     <p class="price">Price: ${{ album.price|floatformat:2 }}</p>
                 </div>
