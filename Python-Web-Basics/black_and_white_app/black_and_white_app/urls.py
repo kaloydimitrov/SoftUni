@@ -15,8 +15,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.conf.urls.static import static, settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('black_and_white_app.web.urls'))
-]
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

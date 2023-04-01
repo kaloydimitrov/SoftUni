@@ -1,17 +1,16 @@
-from django.http import HttpResponse
 from django.shortcuts import render, redirect
-from black_and_white_app.web.forms import UserForm
+from black_and_white_app.web.forms import LoginUserForm
 
 
-def say_hi(request):
-    return HttpResponse('hi')
+def index(request):
+    return render(request, 'index.html')
 
 
 def login(request):
     if request.method == 'GET':
-        form = UserForm
+        form = LoginUserForm
     else:
-        form = UserForm(request.POST)
+        form = LoginUserForm(request.POST)
         if form.is_valid():
             form.save()
             return redirect('index')
