@@ -1,9 +1,10 @@
 from django.shortcuts import render
-from django.views.generic import TemplateView
+from django.views.generic import View, TemplateView, ListView, DetailView
+from class_based_views_app.web.models import Category, Task
 
 
 def main(request):
-    return render(request, 'base.html')
+    return render(request, 'base/base.html')
 
 
 def FBV(request):
@@ -14,19 +15,34 @@ def FBV(request):
     return render(request, 'index.html', context)
 
 
-class CBV(TemplateView):
-    template_name = 'index.html'
+class CBV(View):
+    def get(self, request, *args, **kwargs):
+        context = {
+            'text': "I'm class based view!"
+        }
 
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context['text'] = "I'm class based view!"
-        return context
+        return render(request, 'index.html', context)
 
 
 class TV(TemplateView):
     template_name = 'index.html'
 
     def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context['text'] = "I'm template view!"
-        return context
+        return {
+            'text': "I'm template view!"
+        }
+
+
+# Generic Views
+
+class TaskList(ListView):
+    model = Task
+    template_name = 'task-list.html'
+    ordering = '-category__name'
+    context_object_name = 'tasks'
+
+
+class TaskDetails(DetailView):
+    model = Task
+    template_name = 'task-details.html'
+    context_object_name = 'task'
