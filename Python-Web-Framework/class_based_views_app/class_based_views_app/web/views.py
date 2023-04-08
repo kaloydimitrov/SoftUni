@@ -1,5 +1,7 @@
 from django.shortcuts import render
-from django.views.generic import View, TemplateView, ListView, DetailView
+from django.urls import reverse_lazy
+from django.views.generic import View, TemplateView, ListView, DetailView, CreateView, \
+    UpdateView, DeleteView
 from class_based_views_app.web.models import Category, Task
 
 
@@ -38,11 +40,36 @@ class TV(TemplateView):
 class TaskList(ListView):
     model = Task
     template_name = 'task-list.html'
-    ordering = '-category__name'
     context_object_name = 'tasks'
+    ordering = '-category__name'
 
 
 class TaskDetails(DetailView):
     model = Task
     template_name = 'task-details.html'
     context_object_name = 'task'
+
+
+# CRUD Views
+class TaskCreate(CreateView):
+    model = Task
+    template_name = 'task-create.html'
+    fields = '__all__'
+    success_url = reverse_lazy('lv')
+    context_object_name = 'form'
+
+
+class TaskUpdate(UpdateView):
+    model = Task
+    template_name = 'task-update.html'
+    fields = '__all__'
+    success_url = reverse_lazy('lv')
+    context_object_name = 'form'
+
+
+class TaskDelete(DeleteView):
+    model = Task
+    template_name = 'task-delete.html'
+    fields = '__all__'
+    success_url = reverse_lazy('lv')
+    context_object_name = 'form'

@@ -1,7 +1,10 @@
 {% extends 'base/base.html' %}
 
 {% block content %}
-    <h1>ID: {{ task.pk }}</h1>
-    <h1>Category: {{ task.category }}</h1>
-    <h1>Description: {{ task.description }}</h1>
+    <h1>Details Task</h1>
+    <h4>ID: {{ task.pk }}</h4>
+    <h4>Category: {{ task.category }}</h4>
+    {% if task.description %}
+        <h4>Description: {{ task.description }}</h4>
+    {% endif %}
 {% endblock %}

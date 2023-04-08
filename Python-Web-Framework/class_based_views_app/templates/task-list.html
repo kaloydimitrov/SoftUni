@@ -4,6 +4,9 @@
     I'm list view!
     <h1>I can list all tasks:</h1>
     {% for task in tasks %}
-        <a href="{% url 'lv-d' task.pk %}">{{ task.name }}</a> ({{ task.category }})<br>
+        <a href="{% url 'lv-d' task.pk %}">{{ task.name }}</a> |
+        <a href="{% url 'uv' task.pk %}">Update</a> |
+        <a href="{% url 'dv' task.pk %}">Delete</a>
+        ({{ task.category }})<br>
     {% endfor %}
 {% endblock %}
