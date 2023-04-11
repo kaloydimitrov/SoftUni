@@ -3,12 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <title>UserDemo</title>
+    <style>
+        .right {
+            float: right;
+        }
+    </style>
 </head>
 <body>
 <hr>
 <a href="{% url 'home' %}">Home</a>
 <a href="{% url 'register' %}">Register</a>
-<a href="">Login</a>
+<a href="{% url 'login' %}">Login</a>
+<a href="{% url 'user-details' user.pk %}" class="right">{{ user.username }}</a>
+{#This one#}
 <hr>
 {% block content %}
 {% endblock %}

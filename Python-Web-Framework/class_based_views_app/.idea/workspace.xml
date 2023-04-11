@@ -5,15 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8c9d9e91-bba9-4f75-9452-b23a7720a742" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/templates/task-create.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/task-delete.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/task-update.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../users_demo/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../users_demo/templates/user_details.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../users_demo/templates/user_login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/class_based_views_app/web/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/class_based_views_app/web/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/class_based_views_app/web/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/class_based_views_app/web/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/task-details.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/task-details.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/task-list.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/task-list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../users_demo/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/../users_demo/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../users_demo/templates/base/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/../users_demo/templates/base/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../users_demo/templates/user_register.html" beforeDir="false" afterPath="$PROJECT_DIR$/../users_demo/templates/user_register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../users_demo/users_demo/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/../users_demo/users_demo/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../users_demo/users_demo/web/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/../users_demo/users_demo/web/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../users_demo/users_demo/web/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/../users_demo/users_demo/web/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../users_demo/users_demo/web/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/../users_demo/users_demo/web/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +54,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/kaloian/OneDrive/Documents/GitHub/SoftUni/Python-Web-Basics/my_plant_app&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/kaloian/OneDrive/Documents/GitHub/SoftUni/Python-Web-Framework/class_based_views_app&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -111,6 +113,9 @@
       <workItem from="1680712092925" duration="893000" />
       <workItem from="1680792849985" duration="9955000" />
       <workItem from="1680953689269" duration="11826000" />
+      <workItem from="1681233638781" duration="17000" />
+      <workItem from="1681233918257" duration="8000" />
+      <workItem from="1681233968219" duration="17000" />
     </task>
     <servers />
   </component>
