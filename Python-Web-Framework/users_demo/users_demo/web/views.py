@@ -1,9 +1,10 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.views import LoginView, LogoutView
+from users_demo.web.models import Pizza
 from django.contrib.auth.models import User
 from django.urls import reverse_lazy
-from django.views.generic import CreateView, DetailView
+from django.views.generic import CreateView, DetailView, ListView
 from django import forms
 
 
@@ -20,16 +21,10 @@ def index(request):
 
 
 class MyUserCreationForm(UserCreationForm):
-    first_name = forms.CharField(max_length=30, required=True)
-    last_name = forms.CharField(max_length=30, required=True)
     email = forms.EmailField(required=True)
 
     class Meta(UserCreationForm.Meta):
-        fields = UserCreationForm.Meta.fields + ('first_name', 'last_name', 'email')
-        labels = {
-            'first_name': 'First Name',
-            'last_name': 'Last Name'
-        }
+        fields = UserCreationForm.Meta.fields + ('email',)
 
 
 class UserRegister(CreateView):
@@ -56,3 +51,12 @@ class UserLogOut(LogoutView):
 class UserDetails(DetailView):
     template_name = 'user_details.html'
     model = User
+
+
+class ListPizza(ListView):
+    template_name = 'menu.html'
+    model = Pizza
+    context_object_name = 'pizzas'
+
+    def get_queryset(self):
+        return Pizza.objects.all().only('name', 'ingredients', 'photo')
