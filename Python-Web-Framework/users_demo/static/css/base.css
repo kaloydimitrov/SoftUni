@@ -11,17 +11,16 @@ body {
   font-size: 16px;
   line-height: 1.5;
   color: #333;
+  background-color: tomato;
 }
 
 /* Header styles */
 header {
   background-color: #eee;
   padding: 18px 0;
-  position: relative;
   top: 0;
   left: 0;
   right: 0;
-  z-index: 1;
 }
 
 .container {
@@ -41,36 +40,23 @@ nav a {
   text-decoration: none;
   padding: 10px;
   margin-left: 10px;
-  border-radius: 5px;
-  transition: background-color 0.3s ease;
+  border-radius: 12px;
+  border: 1px solid;
+  transition: background-color 0.5s ease;
 }
 
 nav a:hover {
   background-color: #ccc;
 }
 
+.menu-button:hover {
+  color: #fff700;
+  background-color: tomato;
+}
+
 /* User dropdown styles */
 .user-dropdown {
   position: relative;
-}
-
-.username {
-  background-color: #fff;
-  color: #333;
-  text-decoration: none;
-  padding: 10px;
-  margin-left: 10px;
-  border-radius: 5px;
-  transition: background-color 0.3s ease;
-  cursor: pointer;
-}
-
-.username:hover {
-  background-color: #ccc;
-}
-
-.username:active {
-  background-color: #999;
 }
 
 .dropdown-content {
@@ -83,14 +69,19 @@ nav a:hover {
   min-width: 160px;
   padding: 10px;
   border: 1px solid #ddd;
-  border-radius: 5px;
+  border-radius: 15px;
+  margin-top: 8px;
 }
 
 .dropdown-content a {
   color: #333;
   text-decoration: none;
+  text-align: center;
+  font-size: 15px;
   display: block;
   padding: 5px;
+  border: 0;
+  margin-right: 12px;
 }
 
 .dropdown-content a:hover {
@@ -106,21 +97,3 @@ nav a:hover {
   margin-top: 20px;
   padding: 20px;
 }
-
-/* Footer styles */
-footer {
-  background-color: #333;
-  color: #fff;
-  padding: 10px 0;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-}
-
-footer p {
-  text-align: center;
-}
-
-
-

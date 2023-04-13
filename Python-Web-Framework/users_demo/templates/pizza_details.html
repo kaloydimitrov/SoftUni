@@ -1,0 +1,9 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+    <img src="{{ pizza.photo.url }}" alt="{{ pizza.name }}">
+    {{ pizza.name }}
+    {{ pizza.ingredients }}
+    {{ pizza.size }}
+
+{% endblock %}

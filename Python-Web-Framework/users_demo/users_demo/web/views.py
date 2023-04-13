@@ -60,3 +60,9 @@ class ListPizza(ListView):
 
     def get_queryset(self):
         return Pizza.objects.all().only('name', 'ingredients', 'photo')
+
+
+class BuyPizza(DetailView):
+    template_name = 'pizza_details.html'
+    model = Pizza
+    context_object_name = 'pizza'
