@@ -4,8 +4,10 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
-    <title>UsersDemo</title>
-    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <title>Pizza Gang</title>
+    <link rel="stylesheet" href="{% static 'css/base-s.css' %}">
+    {% block extra_css %}
+    {% endblock %}
   </head>
   <body>
     <header>
@@ -30,5 +32,9 @@
       {% block content %}
       {% endblock %}
     </div>
+
+    <footer>
+      <p>&copy; 2023 Pizza Gang. All rights reserved.</p>
+    </footer>
   </body>
 </html>

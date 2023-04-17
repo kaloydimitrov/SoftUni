@@ -1,9 +1,13 @@
 {% extends 'base/base.html' %}
 {% load static %}
 
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/menu-s.css' %}">
+{% endblock %}
+
 {% block content %}
 
-    <link rel="stylesheet" href="{% static 'css/menu.css' %}">
+    <link rel="stylesheet" href="{% static 'css/menu-s.css' %}">
         <div class="menu-container">
             {% for pizza in pizzas %}
                 <a href="{% url 'pizza-details' pizza.pk %}">

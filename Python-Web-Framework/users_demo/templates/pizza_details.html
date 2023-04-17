@@ -1,9 +1,17 @@
 {% extends 'base/base.html' %}
 
 {% block content %}
-    <img src="{{ pizza.photo.url }}" alt="{{ pizza.name }}">
-    {{ pizza.name }}
-    {{ pizza.ingredients }}
-    {{ pizza.size }}
-
+  <img src="{{ pizza.photo.url }}" alt="{{ pizza.name }}">
+  <h1>{{ pizza.name }}</h1>
+  <p>{{ pizza.ingredients }}</p>
+  <form method="post" action="{% url 'pizza-details' pizza.pk %}">
+    {% csrf_token %}
+    <label for="size">Select a size:</label>
+    <select id="size" name="size">
+      {% for size, display_name in pizza.SIZE_CHOICES %}
+        <option value="{{ size }}">{{ display_name }}</option>
+      {% endfor %}
+    </select>
+    <button type="submit">Buy now!</button>
+  </form>
 {% endblock %}
