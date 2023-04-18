@@ -8,10 +8,12 @@
     {% csrf_token %}
     <label for="size">Select a size:</label>
     <select id="size" name="size">
-      {% for size, display_name in pizza.SIZE_CHOICES %}
-        <option value="{{ size }}">{{ display_name }}</option>
-      {% endfor %}
+
+        {% for size, display_name in Pizza.SIZE_CHOICES %}
+            <option value="{{ size }}">{{ display_name }}</option>
+        {% endfor %}
+
     </select>
-    <button type="submit">Buy now!</button>
+    <button type="submit">Add to cart</button>
   </form>
 {% endblock %}

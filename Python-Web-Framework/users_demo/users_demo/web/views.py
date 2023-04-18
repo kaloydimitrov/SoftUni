@@ -1,7 +1,7 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.views import LoginView, LogoutView
-from users_demo.web.models import Pizza
+from users_demo.web.models import Pizza, CartItem, Cart
 from django.contrib.auth.models import User
 from django.urls import reverse_lazy
 from django.views.generic import CreateView, DetailView, ListView
@@ -66,3 +66,11 @@ class BuyPizza(DetailView):
     template_name = 'pizza_details.html'
     model = Pizza
     context_object_name = 'pizza'
+
+
+def add_to_cart(request, pizza_id, size):
+    pizza = get_object_or_404(Pizza, id=pizza_id)
+    item = CartItem.objects.create(pizza=pizza, size=size)
+    cart, created = Cart.objects.get_or_create(user=request.user)
+    cart.items.add(item)
+    return redirect('menu')
