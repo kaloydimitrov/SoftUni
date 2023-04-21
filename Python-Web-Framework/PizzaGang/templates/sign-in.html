@@ -5,9 +5,10 @@
     <title>Title</title>
 </head>
 <body>
-<form action="{% url 'register' %}" method="post">
+<form action="{% url 'sign-in' %}" method="post">
     {{ form }}
-    <button type="submit">Register</button>
+    {% csrf_token %}
+    <button type="submit">Login</button>
 </form>
 </body>
 </html>

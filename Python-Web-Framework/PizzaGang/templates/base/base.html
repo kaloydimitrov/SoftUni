@@ -5,10 +5,11 @@
 <head>
     <meta charset="UTF-8">
     <title>PizzaGang</title>
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
 </head>
 <body>
 <header>
-    <a href="{% url 'home' %}"><img src="{% static 'pictures/logo.png' %}" alt=""></a>
+    <a href="{% url 'home' %}"><img src="{% static 'pictures/logo.png' %}" alt="" class="logo"></a>
 </header>
 {% block content %}
 {% endblock %}
