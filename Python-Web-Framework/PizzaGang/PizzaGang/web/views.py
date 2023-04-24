@@ -1,6 +1,7 @@
-from django.contrib.auth.views import LoginView
+from django.contrib.auth.views import LoginView, LogoutView
 from django.views.generic import TemplateView, CreateView
 from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.models import User
 from django.urls import reverse_lazy
 
 
@@ -9,7 +10,7 @@ class BaseView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['my_data'] = 'Hello, World!'
+        context['user'] = self.request.user
         return context
 
 
@@ -26,4 +27,8 @@ class RegisterView(CreateView):
 
 class SignInView(LoginView):
     template_name = 'sign-in.html'
-    fields = ['username', 'password']
+    next_page = reverse_lazy('home')
+
+
+class SignOutView(LogoutView):
+    next_page = reverse_lazy('home')

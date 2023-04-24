@@ -9,9 +9,31 @@
 </head>
 <body>
 <header>
-    <a href="{% url 'home' %}"><img src="{% static 'pictures/logo.png' %}" alt="" class="logo"></a>
+    <a href="{% url 'home' %}" class="nav-logo">
+        <img src="{% static 'pictures/logo.png' %}" alt="logo" class="logo">
+    </a>
+
+    <div class="header-buttons">
+        <a href="" class="green-button">Menu</a>
+
+        {% if user.is_authenticated %}
+            <div class="dropdown">
+              <button class="dropdown-button">{{ user.username|truncatechars:10 }}</button>
+              <div class="dropdown-content">
+                <a href="">Profile</a>
+                <a href="{% url 'sign-out' %}">Log Out</a>
+              </div>
+            </div>
+        {% else %}
+            <a href="{% url 'sign-in' %}" class="green-button">Sign In</a>
+        {% endif %}
+    </div>
+
 </header>
 {% block content %}
 {% endblock %}
+<footer>
+
+</footer>
 </body>
 </html>
