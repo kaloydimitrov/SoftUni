@@ -6,34 +6,44 @@
     <meta charset="UTF-8">
     <title>PizzaGang</title>
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    {% block link %}
+    {% endblock %}
 </head>
 <body>
 <header>
-    <a href="{% url 'home' %}" class="nav-logo">
-        <img src="{% static 'pictures/logo.png' %}" alt="logo" class="logo">
-    </a>
+    <div class="nav-logo">
+        <a href="{% url 'home' %}">
+            <img src="{% static 'pictures/logo.png' %}" alt="logo" class="logo">
+        </a>
+    </div>
+
 
     <div class="header-buttons">
-        <a href="" class="green-button">Menu</a>
+        <a href="{% url 'menu' %}" class="green-button">Menu</a>
 
         {% if user.is_authenticated %}
-            <div class="dropdown">
-              <button class="dropdown-button">{{ user.username|truncatechars:10 }}</button>
-              <div class="dropdown-content">
-                <a href="">Profile</a>
-                <a href="{% url 'sign-out' %}">Log Out</a>
-              </div>
-            </div>
+            <a href="" class="green-button" id="dropdown-a">{{ user.username }}</a>
+            <ul>
+              <li><a href="{% url 'sign-out' %}">Sign Out</a></li>
+            </ul>
         {% else %}
             <a href="{% url 'sign-in' %}" class="green-button">Sign In</a>
         {% endif %}
     </div>
 
 </header>
+
 {% block content %}
 {% endblock %}
-<footer>
 
-</footer>
+<div class="footer-container">
+    <footer>
+    <p>© 2013-2023 - PizzaGang LTD - All Rights Reserved.</p>
+    <a href="https://www.facebook.com/">Facebook</a>
+    <a href="https://www.instagram.com/">Instagram</a>
+    <a href="https://twitter.com/">Twitter</a>
+    </footer>
+</div>
+
 </body>
 </html>

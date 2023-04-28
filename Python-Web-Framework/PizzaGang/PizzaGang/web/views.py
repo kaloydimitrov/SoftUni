@@ -1,8 +1,8 @@
 from django.contrib.auth.views import LoginView, LogoutView
-from django.views.generic import TemplateView, CreateView
-from django.contrib.auth.forms import UserCreationForm
-from django.contrib.auth.models import User
+from django.views.generic import TemplateView, CreateView, ListView, DetailView
+from PizzaGang.web.forms import CustomUserCreationForm
 from django.urls import reverse_lazy
+from PizzaGang.web.models import Pizza
 
 
 class BaseView(TemplateView):
@@ -17,9 +17,16 @@ class BaseView(TemplateView):
 class HomeView(TemplateView):
     template_name = 'index.html'
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['user'] = self.request.user
+        return context
+
+#
+
 
 class RegisterView(CreateView):
-    form_class = UserCreationForm
+    form_class = CustomUserCreationForm
     template_name = 'register.html'
     context_object_name = 'form'
     success_url = reverse_lazy('home')
@@ -32,3 +39,22 @@ class SignInView(LoginView):
 
 class SignOutView(LogoutView):
     next_page = reverse_lazy('home')
+
+
+class UserInfoView(TemplateView):
+    template_name = 'user-info.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['user'] = self.request.user
+        return context
+
+
+class ListPizzaView(ListView):
+    template_name = 'menu.html'
+    model = Pizza
+
+
+class DetailPizzaView(DetailView):
+    template_name = 'pizza-details.html'
+    model = Pizza

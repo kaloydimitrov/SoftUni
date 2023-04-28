@@ -1,0 +1,30 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block link %}
+    <link rel="stylesheet" href="{% static 'css/menu.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="pizza-box-main-container">
+        {% for pizza in object_list %}
+        <a href="{% url 'pizza-details' pizza.pk %}">
+        <div class="pizza-box-container">
+            <h4 class="pizza-title-name">{{ pizza.name }}</h4>
+            <hr>
+
+            <div class="pizza-img-container">
+                <img src="{{ pizza.image.url }}" alt="pizza-img" class="pizza-img">
+            </div>
+
+            <div class="pizza-desc-container">
+                <p>{{ pizza.ingredients|truncatechars:70 }}</p>
+            </div>
+
+        </div>
+        </a>
+
+        {% endfor %}
+
+    </div>
+{% endblock %}

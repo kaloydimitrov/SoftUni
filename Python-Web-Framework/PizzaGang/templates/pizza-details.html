@@ -1,0 +1,17 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+
+{% block link %}
+    <link rel="stylesheet" href="{% static 'css/pizza-details.css' %}">
+{% endblock %}
+
+{% block content %}
+
+    <div class="pizza-details-container">
+        {{ pizza.name }}
+        <img src="{{ pizza.image.url }}" alt="pizza-img">
+    </div>
+
+    <button>Add to Cart</button>
+{% endblock %}
