@@ -1,15 +1,20 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>PizzaGang - Sign In</title>
+    <link rel="stylesheet" href="{% static 'css/sign-in.css' %}">
 </head>
 <body>
 <form action="{% url 'sign-in' %}" method="post">
     {{ form }}
     {% csrf_token %}
-    <button type="submit">Login</button>
+    <button type="submit">Sign In</button>
+
+    <p>You don't have an account? <a href="{% url 'register' %}" class="nav-button">Register</a></p>
 </form>
-You don't have an account? <a href="{% url 'register' %}" class="nav-button">Register</a>
+
 </body>
 </html>

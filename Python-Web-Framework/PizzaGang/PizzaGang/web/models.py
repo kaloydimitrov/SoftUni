@@ -2,10 +2,10 @@ from django.db import models
 
 
 class Pizza(models.Model):
-    PE = "FR"
-    SM = "SO"
-    ME = "JR"
-    LA = "SR"
+    PE = "PE"
+    SM = "SM"
+    ME = "ME"
+    LA = "LA"
     SIZE = [
         (PE, "Personal"),
         (SM, "Small"),

@@ -9,9 +9,27 @@
 {% block content %}
 
     <div class="pizza-details-container">
-        {{ pizza.name }}
-        <img src="{{ pizza.image.url }}" alt="pizza-img">
+        <h1>{{ pizza.name }}</h1>
+        <hr>
+        <img src="{{ pizza.image.url }}" alt="pizza-img" class="pizza-img">
+        <hr>
+        <p>{{ pizza.ingredients }}</p>
+
+        <form method="POST" action="{% url 'cart' pizza.pk %}">
+            {% csrf_token %}
+            <label for="size">Size:</label>
+            <select name="size" id="size">
+                {% for size, label in pizza.SIZE %}
+                    <option value="{{ size }}">{{ label }}</option>
+                {% endfor %}
+            </select>
+            <br>
+            <label for="quantity">Quantity:</label>
+            <input type="number" name="quantity" id="quantity" value="1" min="1">
+            <br>
+            <button type="submit" class="green-button-cart">Add to Cart</button>
+        </form>
+
     </div>
 
-    <button>Add to Cart</button>
 {% endblock %}

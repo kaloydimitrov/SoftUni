@@ -22,10 +22,13 @@
         <a href="{% url 'menu' %}" class="green-button">Menu</a>
 
         {% if user.is_authenticated %}
-            <a href="" class="green-button" id="dropdown-a">{{ user.username }}</a>
-            <ul>
-              <li><a href="{% url 'sign-out' %}">Sign Out</a></li>
-            </ul>
+           <div class="dropdown">
+              <button class="dropbtn">{{ user.username|truncatechars:7 }}</button>
+              <div class="dropdown-content">
+                <a href="#">Profile</a>
+                <a href="{% url 'sign-out' %}">Sign Out</a>
+              </div>
+            </div>
         {% else %}
             <a href="{% url 'sign-in' %}" class="green-button">Sign In</a>
         {% endif %}

@@ -11,6 +11,7 @@
         <a href="{% url 'pizza-details' pizza.pk %}">
         <div class="pizza-box-container">
             <h4 class="pizza-title-name">{{ pizza.name }}</h4>
+
             <hr>
 
             <div class="pizza-img-container">
@@ -18,7 +19,7 @@
             </div>
 
             <div class="pizza-desc-container">
-                <p>{{ pizza.ingredients|truncatechars:70 }}</p>
+                <p>{{ pizza.ingredients|truncatechars:50 }}</p>
             </div>
 
         </div>
