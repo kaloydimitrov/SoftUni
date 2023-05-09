@@ -1,5 +1,5 @@
 from django.urls import path, include
-from PizzaGang.web.views import HomeView, RegisterView, SignInView, SignOutView, ListPizzaView, DetailPizzaView
+from PizzaGang.web.views import HomeView, RegisterView, SignInView, SignOutView, ListPizzaView, DetailPizzaView, add_to_cart
 
 urlpatterns = [
     path('', HomeView.as_view(), name='home'),
@@ -10,5 +10,5 @@ urlpatterns = [
     ])),
     path('menu/', ListPizzaView.as_view(), name='menu'),
     path('pizza-details/<int:pk>/', DetailPizzaView.as_view(), name='pizza-details'),
-
+    path('pizza/<int:pizza_pk>/add-to-cart/', add_to_cart, name='cart'),
 ]

@@ -1,9 +1,10 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.views import LoginView, LogoutView
+from django.contrib.auth.decorators import login_required
 from django.views.generic import TemplateView, CreateView, ListView, DetailView
+from PizzaGang.web.models import Pizza, Cart
 from PizzaGang.web.forms import CustomUserCreationForm
 from django.urls import reverse_lazy
-from PizzaGang.web.models import Pizza
 
 
 class BaseView(TemplateView):
@@ -22,9 +23,6 @@ class HomeView(TemplateView):
         context = super().get_context_data(**kwargs)
         context['user'] = self.request.user
         return context
-
-
-#
 
 
 class RegisterView(CreateView):
@@ -62,29 +60,21 @@ class DetailPizzaView(DetailView):
     model = Pizza
 
 
+@login_required
+def add_to_cart(request, pizza_pk):
+    pizza = get_object_or_404(Pizza, pk=pizza_pk)
+
+    if request.method == 'POST':
+        size = request.POST.get('size')
+        quantity = int(request.POST.get('quantity'))
+
+        cart = Cart(user=request.user, pizza=pizza, size=size, quantity=quantity)
+        cart.save()
+
+        return redirect('home')
+
+    return render(request, 'pizza-details.html', )
+
+
 def handler404(request, exception=None):
     return render(request, '404.html', status=404)
-
-
-# Testing Authorization and Authentication
-from django.contrib.auth.models import User
-from django.contrib.auth import authenticate
-from django.contrib.auth import logout
-
-# user = User.objects.create_user('kaloyan', 'kalotablet2006@gmail.com', 'PassMe1234')
-user_auth = authenticate(username='kaloyan', password='PassMe1234')
-
-print(user_auth)
-
-
-def current_user(request):
-    user = request.user
-    print(user.username)
-
-
-def logout_example(request):
-    print(request.user.__class__.__name__)
-    logout(request, user_auth)
-    print(request.user.__class__.__name__)
-    # TODO: add template
-    return render(request, '')

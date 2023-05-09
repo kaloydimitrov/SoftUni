@@ -39,8 +39,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'PizzaGang.web',
-    'PizzaGang.cart'
-
 ]
 
 MIDDLEWARE = [

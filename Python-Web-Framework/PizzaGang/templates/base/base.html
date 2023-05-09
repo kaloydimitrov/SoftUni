@@ -19,6 +19,7 @@
 
 
     <div class="header-buttons">
+        <a href="" class="green-button">Cart</a>
         <a href="{% url 'menu' %}" class="green-button">Menu</a>
 
         {% if user.is_authenticated %}
@@ -32,12 +33,16 @@
         {% else %}
             <a href="{% url 'sign-in' %}" class="green-button">Sign In</a>
         {% endif %}
+
     </div>
 
 </header>
 
+<main>
 {% block content %}
 {% endblock %}
+</main>
+
 
 <div class="footer-container">
     <footer>

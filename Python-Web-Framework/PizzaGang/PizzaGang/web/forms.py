@@ -4,14 +4,42 @@ from django.contrib.auth.models import User
 
 
 class CustomUserCreationForm(UserCreationForm):
-    email = forms.EmailField(required=True, help_text='')
-    first_name = forms.CharField(max_length=30, help_text='')
-    last_name = forms.CharField(max_length=30, help_text='')
+    first_name = forms.CharField(
+        max_length=30,
+    )
+
+    last_name = forms.CharField(
+        max_length=30,
+    )
+
+    password1 = forms.CharField(
+        label="Password",
+        strip=False,
+        widget=forms.PasswordInput,
+        error_messages={
+            'password_too_similar': '',
+            'password_entirely_numeric': '',
+        }
+    )
+
+    password2 = forms.CharField(
+        label="Password confirmation",
+        strip=False,
+        widget=forms.PasswordInput,
+        error_messages={
+            'password_mismatch': '',
+        }
+    )
+
+    email = forms.EmailField(
+        required=True,
+        label="Email",
+        error_messages={
+            'required': '',
+            'invalid': ''
+        }
+    )
 
     class Meta:
         model = User
         fields = ['username', 'email', 'first_name', 'last_name', 'password1', 'password2']
-        labels = {
-            'first_name': "First Name",
-            'last_name': 'Last Name'
-        }

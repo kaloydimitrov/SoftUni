@@ -9,20 +9,23 @@
 .pizza-box-container {
     height: 250px;
     width: 170px;
-    border: 1px solid black;
-    border-radius: 10px;
-    background-color: rgba(215, 215, 0, 0.70);
+
+    border-radius: 7px;
+    background-color: rgb(255, 255, 255);
     margin-right: 30px;
     padding-left: 5px;
     padding-right: 5px;
 
 
-    transition: padding 0.2s ease-in-out;
+    transition: width 0.2s ease-in-out;
     text-align: center;
+
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
 }
 
 .pizza-box-container:hover {
-    padding: 10px;
+    height: 260px;
+    width: 180px;
 }
 
 .pizza-img-container {
@@ -41,18 +44,17 @@
     word-wrap: break-word;
     padding-left: 8px;
     padding-right: 8px;
-    color: black;
+    color: rgba(0, 0, 0, 0.6);
 }
 
 hr {
   border: none;
-  border-top: 1px solid black;
+  border-top: 2px solid rgba(0, 0, 0, 0.2);
   margin: 0;
 }
 
 .pizza-title-name {
-    margin-top: 5px;
-    margin-bottom: 5px;
-    color: black;
+    color: rgb(255, 145, 0);
     font-size: 15px;
+    margin-bottom: 2px;
 }

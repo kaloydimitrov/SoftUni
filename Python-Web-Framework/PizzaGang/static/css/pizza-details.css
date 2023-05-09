@@ -1,53 +1,69 @@
 .pizza-details-container {
+    width: 1000px;
     margin-top: auto;
-    padding-bottom: 100px;
-    background-color: rgba(255, 145, 0, 0.4);
-    border-bottom: 1px solid black;
+    margin-right: auto;
+    margin-left: auto;
+    padding-bottom: 20px;
+    background-color: rgb(255, 255, 255);
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
 
     text-align: center;
+
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
 }
 
-.button-position {
-    text-align: center;
+.pizza-title-name {
+    margin: 0 0 10px 0;
+    color: rgb(255, 145, 0);
+    font-size: 40px;
+}
+
+.pizza-img {
+    margin-top: 13px;
 }
 
 .green-button-cart {
     background-color: #04AA6D;
     color: white;
     border-radius: 60px;
-    margin-top: 35px;
+    border: 0;
+    margin-top: 10px;
+    margin-left: 700px;
 
-    padding: 70px;
-    font-size: 70px;
+    padding: 30px;
+    font-size: 30px;
 
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.4);
     transition: padding 0.2s ease-in-out;
 }
 
 .green-button-cart:hover {
-    padding: 80px;
     background-color: #5ee53d;
-    border-color: #115d00;
+    padding: 35px;
 }
 
-h1 {
-    margin: 0;
+/*.hr-normal {*/
+/*    border: none;*/
+/*    border-top: 3px solid #ff9100;*/
+
+/*    margin: 0;*/
+/*}*/
+
+.hr-dotted {
+    border-top: 1px dotted rgba(0, 0, 0, 0.2);
 }
 
-hr {
-  border: none;
-  border-top: 1px solid black;
-  width: 100%;
-  margin: 0;
-}
-
-.pizza-img {
+.desc {
     margin-top: 20px;
-    border-radius: 100px;
-    height: 350px;
-    width: 350px;
-}
-
-p {
-    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
     font-weight: bold;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.size_and_quantity {
+    position: absolute;
+    margin-top: 40px;
+    margin-left: 70px;
 }
