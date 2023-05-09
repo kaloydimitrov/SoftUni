@@ -1,5 +1,6 @@
 from django.urls import path, include
-from PizzaGang.web.views import HomeView, RegisterView, SignInView, SignOutView, ListPizzaView, DetailPizzaView, add_to_cart
+from PizzaGang.web.views import HomeView, RegisterView, SignInView, SignOutView, ListPizzaView, DetailPizzaView, \
+                                add_to_cart
 
 urlpatterns = [
     path('', HomeView.as_view(), name='home'),

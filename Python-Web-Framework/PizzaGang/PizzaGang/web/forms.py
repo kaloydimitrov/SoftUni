@@ -5,10 +5,12 @@ from django.contrib.auth.models import User
 
 class CustomUserCreationForm(UserCreationForm):
     first_name = forms.CharField(
+        label="First Name",
         max_length=30,
     )
 
     last_name = forms.CharField(
+        label="Last Name",
         max_length=30,
     )
 
@@ -23,7 +25,7 @@ class CustomUserCreationForm(UserCreationForm):
     )
 
     password2 = forms.CharField(
-        label="Password confirmation",
+        label="Password Confirmation",
         strip=False,
         widget=forms.PasswordInput,
         error_messages={

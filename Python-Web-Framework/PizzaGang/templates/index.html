@@ -1,11 +1,101 @@
 {% extends 'base/base.html' %}
 {% load static %}
 
-{% block link %}
-    <link rel="stylesheet" href="{% static 'css/index.css' %}">
-{% endblock %}
-
 {% block content %}
+<div class="slideshow-container">
+    <h1>Offers</h1>
+    {% for pizza in pizzas %}
+        <img class="slideshow-image" alt="slide-image" src="{{ pizza.image.url }}">
+    {% endfor %}
 
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div>
 
+<style>
+/* CSS for slideshow container */
+.slideshow-container {
+    position: relative;
+    margin: 50px auto auto;
+    background-color: #ff9100;
+    border-radius: 0px;
+    padding: 50px;
+    width: 1100px;
+    height: 600px;
+
+    text-align: center;
+}
+
+/* CSS for slideshow images */
+.slideshow-image {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* CSS for slideshow arrows */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: rgba(0, 0, 0, 0.7);
+    font-weight: bold;
+    font-size: 40px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+
+    background-color: #3e8e41;
+}
+
+/* CSS for previous arrow */
+.prev {
+    left: 0;
+}
+
+/* CSS for next arrow */
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+</style>
+
+<script>
+var slideIndex = 1;
+showSlides(slideIndex);
+
+// Function to navigate to the previous or next slide
+function plusSlides(n) {
+    showSlides(slideIndex += n);
+}
+
+// Function to display the current slide
+function showSlides(n) {
+    var i;
+    var slides = document.getElementsByClassName("slideshow-image");
+
+    // Loop back to the first slide when reaching the end
+    if (n > slides.length) {
+        slideIndex = 1;
+    }
+    if (n < 1) {
+        slideIndex = slides.length;
+    }
+
+    // Hide all slides
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+
+    // Display the current slide
+    slides[slideIndex - 1].style.display = "block";
+}
+
+// Automatic slideshow
+setInterval(function() {
+    plusSlides(1);
+}, 3000); // Change slide every 3 seconds
+</script>
 {% endblock %}

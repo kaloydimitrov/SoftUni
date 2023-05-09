@@ -21,7 +21,7 @@ class HomeView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['user'] = self.request.user
+        context['pizzas'] = Pizza.objects.all()
         return context
 
 
@@ -68,7 +68,7 @@ def add_to_cart(request, pizza_pk):
         size = request.POST.get('size')
         quantity = int(request.POST.get('quantity'))
 
-        cart = Cart(user=request.user, pizza=pizza, size=size, quantity=quantity)
+        cart = Cart(pizza=pizza, size=size, quantity=quantity)
         cart.save()
 
         return redirect('home')
