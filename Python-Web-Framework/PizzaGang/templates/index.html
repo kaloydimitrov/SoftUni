@@ -2,81 +2,122 @@
 {% load static %}
 
 {% block content %}
+
+<div>
+
+</div>
+
 <div class="slideshow-container">
-    <h1>Offers</h1>
+    <img src="{% static 'pictures/special-offer.png' %}" alt="special-logo" class="special-logo">
+
+    <h1 class="offers-text">Offers</h1>
     {% for pizza in pizzas %}
-        <img class="slideshow-image" alt="slide-image" src="{{ pizza.image.url }}">
+        {% if pizza.is_offer %}
+            <img class="slideshow-image" alt="slide-image" src="{{ pizza.image.url }}">
+        {% endif %}
     {% endfor %}
 
     <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
     <a class="next" onclick="plusSlides(1)">&#10095;</a>
 </div>
 
-<style>
-/* CSS for slideshow container */
-.slideshow-container {
-    position: relative;
-    margin: 50px auto auto;
-    background-color: #ff9100;
-    border-radius: 0px;
-    padding: 50px;
-    width: 1100px;
-    height: 600px;
 
-    text-align: center;
+<style>
+.slideshow-container {
+    height: 400px;
+    background-color: rgba(17, 93, 0, 0.95);
+    position: relative;
+    overflow: hidden;
 }
 
-/* CSS for slideshow images */
 .slideshow-image {
     margin-left: auto;
     margin-right: auto;
+    position: absolute;
+    margin-left: 800px;
+    opacity: 0;
+    transition: transform 1s ease-in-out, opacity 1s ease-in-out;
 }
 
-/* CSS for slideshow arrows */
+.slideshow-image.active {
+    opacity: 1;
+    transform: translateX(10%);
+}
+
+.slideshow-image.previous {
+    transform: translateX(-100%);
+}
+
+.slideshow-image.next {
+    transform: translateX(-10%);
+}
+
+.offers-text {
+
+    margin-left: auto;
+    margin-right: auto;
+    position: static;
+    font-size: 70px;
+    color: #ff0000;
+    padding: 2px;
+}
+
 .prev, .next {
     cursor: pointer;
     position: absolute;
-    top: 50%;
-    width: auto;
     padding: 16px;
-    margin-top: -22px;
-    color: rgba(0, 0, 0, 0.7);
+    color: rgb(0, 0, 0);
     font-weight: bold;
     font-size: 40px;
     transition: 0.6s ease;
-    border-radius: 0 3px 3px 0;
     user-select: none;
-
-    background-color: #3e8e41;
 }
 
-/* CSS for previous arrow */
+.prev:hover, .next:hover {
+    background-color: #115d00;
+    color: rgb(4, 170, 109);
+}
+
 .prev {
     left: 0;
 }
 
-/* CSS for next arrow */
 .next {
     right: 0;
     border-radius: 3px 0 0 3px;
 }
+
+.special-logo {
+    position: fixed;
+    margin-right: 1000px;
+    transform: scale(5.0);
+    animation: rotation 20s infinite linear;
+}
+
+@keyframes rotation {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(359deg);
+    }
+}
+
 </style>
+
 
 <script>
 var slideIndex = 1;
 showSlides(slideIndex);
 
-// Function to navigate to the previous or next slide
 function plusSlides(n) {
     showSlides(slideIndex += n);
 }
 
-// Function to display the current slide
 function showSlides(n) {
     var i;
     var slides = document.getElementsByClassName("slideshow-image");
 
-    // Loop back to the first slide when reaching the end
     if (n > slides.length) {
         slideIndex = 1;
     }
@@ -84,18 +125,27 @@ function showSlides(n) {
         slideIndex = slides.length;
     }
 
-    // Hide all slides
     for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
+        slides[i].classList.remove("active", "previous", "next");
     }
 
-    // Display the current slide
-    slides[slideIndex - 1].style.display = "block";
+    slides[slideIndex - 1].classList.add("active");
+
+    if (slideIndex === 1) {
+        slides[slides.length - 1].classList.add("previous");
+        slides[slideIndex].classList.add("next");
+    } else if (slideIndex === slides.length) {
+        slides[slideIndex - 2].classList.add("previous");
+        slides[0].classList.add("next");
+    } else {
+        slides[slideIndex - 2].classList.add("previous");
+        slides[slideIndex].classList.add("next");
+    }
 }
 
-// Automatic slideshow
 setInterval(function() {
     plusSlides(1);
-}, 3000); // Change slide every 3 seconds
+}, 3000);
 </script>
+
 {% endblock %}

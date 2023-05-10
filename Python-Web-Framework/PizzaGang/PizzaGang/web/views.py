@@ -6,6 +6,8 @@ from PizzaGang.web.models import Pizza, Cart
 from PizzaGang.web.forms import CustomUserCreationForm
 from django.urls import reverse_lazy
 
+from django.contrib.auth.models import User
+
 
 class BaseView(TemplateView):
     template_name = 'base/base.html'
@@ -74,6 +76,11 @@ def add_to_cart(request, pizza_pk):
         return redirect('home')
 
     return render(request, 'pizza-details.html', )
+
+
+class UserDetails(DetailView):
+    template_name = 'user-details.html'
+    model = User
 
 
 def handler404(request, exception=None):

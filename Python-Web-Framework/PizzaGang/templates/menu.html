@@ -6,6 +6,10 @@
 {% endblock %}
 
 {% block content %}
+    <div class="filters">
+
+    </div>
+
     <div class="pizza-box-main-container">
         {% for pizza in object_list %}
         <a href="{% url 'pizza-details' pizza.pk %}">
@@ -21,6 +25,10 @@
             <div class="pizza-desc-container">
                 <p>{{ pizza.ingredients|truncatechars:50 }}</p>
             </div>
+
+            {% if pizza.is_offer %}
+                <img src="{% static 'pictures/special-offer.png' %}" alt="special-logo" class="special-logo">
+            {% endif %}
 
         </div>
         </a>

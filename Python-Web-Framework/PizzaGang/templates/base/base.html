@@ -26,7 +26,7 @@
            <div class="dropdown">
               <button class="dropbtn">{{ user.username|truncatechars:7 }}</button>
               <div class="dropdown-content">
-                <a href="#">Profile</a>
+                <a href="{% url 'user-details' user.pk %}">Profile</a>
                 <a href="{% url 'sign-out' %}">Sign Out</a>
               </div>
             </div>

@@ -15,7 +15,7 @@ class Pizza(models.Model):
 
     name = models.CharField(max_length=30)
     ingredients = models.TextField()
-    image = models.ImageField(upload_to='static/pictures/', blank=True, null=True)
+    image = models.ImageField(upload_to='static/pictures/pizza/', blank=True, null=True)
     size = models.CharField(max_length=30, choices=SIZE, blank=True, null=True)
     is_offer = models.BooleanField(blank=True, null=True)
 
