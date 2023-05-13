@@ -7,6 +7,19 @@
     border-bottom: 2px solid rgba(0, 0, 0, 0.4);
 }
 
+.pizza-title-name {
+    color: rgb(255, 145, 0);
+    font-size: 15px;
+    margin-bottom: 2px;
+}
+
+hr {
+  border: none;
+  border-top: 2px solid rgba(0, 0, 0, 0.2);
+  margin: 0;
+}
+
+
 /*Pizza Box */
 
 .pizza-box-main-container {
@@ -17,7 +30,7 @@
 }
 
 .pizza-box-container {
-    height: 250px;
+    height: 265px;
     width: 170px;
 
     border-radius: 7px;
@@ -34,7 +47,7 @@
 }
 
 .pizza-box-container:hover {
-    height: 260px;
+    height: 275px;
     width: 180px;
 }
 
@@ -57,19 +70,7 @@
     color: rgba(0, 0, 0, 0.6);
 }
 
-hr {
-  border: none;
-  border-top: 2px solid rgba(0, 0, 0, 0.2);
-  margin: 0;
-}
-
-.pizza-title-name {
-    color: rgb(255, 145, 0);
-    font-size: 15px;
-    margin-bottom: 2px;
-}
-
-.special-logo {
-    position: sticky;
-    transform: scale(0.5);
+.items-container {
+    display: flex;
+    background-color: #d7d700;
 }

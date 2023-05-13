@@ -7,7 +7,7 @@
 
 {% block content %}
     <div class="filters">
-
+        fergxsrtghxsrth
     </div>
 
     <div class="pizza-box-main-container">
@@ -26,9 +26,44 @@
                 <p>{{ pizza.ingredients|truncatechars:50 }}</p>
             </div>
 
-            {% if pizza.is_offer %}
-                <img src="{% static 'pictures/special-offer.png' %}" alt="special-logo" class="special-logo">
-            {% endif %}
+            <div class="items-container">
+                {% if pizza.is_special %}
+
+                     <div class="hover-container">
+                      <img src="{% static 'pictures/special.png' %}" alt="special-logo" class="hover-target">
+                      <aside class="hover-popup">
+                        <h2 class="title">Special Edition</h2>
+                        <p class="desc">This item means that the pizza you chose has a great chance to be one of the best products we have!</p>
+                      </aside>
+                    </div>
+
+                {% endif %}
+
+                {% if pizza.is_vege %}
+
+                     <div class="hover-container">
+                      <img src="{% static 'pictures/vege.png' %}" alt="special-logo" class="hover-target">
+                      <aside class="hover-popup">
+                        <h2 class="title">Vege/Fast</h2>
+                        <p class="desc">This item means that the pizza you chose has a high quality vegetarian products and it's good for fasting!</p>
+                      </aside>
+                    </div>
+
+                {% endif %}
+
+                {% if pizza.is_offer %}
+
+                    <div class="hover-container">
+                      <img src="{% static 'pictures/discount.png' %}" alt="special-logo" class="hover-target">
+                      <aside class="hover-popup">
+                        <h2 class="title">Discount</h2>
+                        <p class="desc">This item means that the pizza you chose has a <mark>50%</mark> discount!</p>
+                      </aside>
+                    </div>
+
+                {% endif %}
+            </div>
+
 
         </div>
         </a>
@@ -36,4 +71,84 @@
         {% endfor %}
 
     </div>
+
+<style>
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.hover-container {
+  position: relative;
+}
+
+.hover-target {
+  margin-top: 10px;
+  height: 40px;
+  width: 40px;
+  font-size: 2rem;
+}
+
+.hover-popup {
+  margin-top: 7px;
+  font-size: 11px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 1.5em;
+  transform: scale(0);
+  transition: transform 200ms ease;
+  transform-origin: 8% -10px;
+
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.title {
+    color: rgb(255, 145, 0);
+}
+
+.desc {
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.hover-target:hover + .hover-popup,
+.hover-target:focus + .hover-popup,
+.hover-popup:hover{
+  transform: scale(1);
+}
+
+.hover-popup :not(:first-child) {
+  margin-top: 1rem;
+}
+
+.hover-popup span {
+  font-weight: 700;
+}
+
+.hover-popup::after {
+  content: '';
+  position: absolute;
+  top: -1rem;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-delay: -1ms !important;
+    animation-duration: -1ms !important;
+    animation-iteration-count: 1 !important;
+    background-attachment: initial !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0s !important;
+    transition-delay: 0s !important;
+  }
+}
+</style>
 {% endblock %}
