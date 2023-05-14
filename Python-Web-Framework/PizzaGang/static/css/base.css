@@ -20,12 +20,12 @@ main {
 
 /*Header*/
 header {
-    background-color: #d7d700;
+    background-color: #ffd500;
     height: 100px;
 
     display: flex;
     align-items: center;
-    border-bottom: 4px solid #ff9100;
+    border-bottom: 4px solid rgba(0, 0, 0, 0.4);
 }
 
 .logo {
@@ -58,6 +58,7 @@ footer {
     color: #04AA6D;
     padding: 50px;
 
+    margin-top: 20px;
     border-top: 6px solid #04aa6d;
 }
 
@@ -105,7 +106,3 @@ footer a {
 .dropdown:hover .dropdown-content {display: block;}
 
 .dropdown:hover .dropbtn {background-color: #3e8e41;}
-
-
-/*Popup Window*/
-

@@ -30,6 +30,7 @@ hr {
 }
 
 .pizza-box-container {
+    position: relative;
     height: 265px;
     width: 170px;
 
@@ -40,7 +41,7 @@ hr {
     padding-right: 5px;
 
 
-    transition: width 0.2s ease-in-out;
+    transition: width 0.2s ease-in-out, height 0.2s ease-in-out;
     text-align: center;
 
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
@@ -68,9 +69,4 @@ hr {
     padding-left: 8px;
     padding-right: 8px;
     color: rgba(0, 0, 0, 0.6);
-}
-
-.items-container {
-    display: flex;
-    background-color: #d7d700;
 }

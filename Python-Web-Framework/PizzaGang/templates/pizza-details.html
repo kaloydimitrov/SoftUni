@@ -7,7 +7,6 @@
 {% endblock %}
 
 {% block content %}
-
     <div class="pizza-details-container">
         <h1 class="pizza-title-name">❃ {{ pizza.name }} ❃</h1>
 
@@ -15,29 +14,63 @@
 
         <img src="{{ pizza.image.url }}" alt="pizza-img" class="pizza-img">
 
+        <div class="item-container-top"></div>
+        <div class="item-container">
+            {% if pizza.is_special %}
+                 <div class="hover-container">
+                  <img src="{% static 'pictures/special.png' %}" alt="item-logo" class="hover-target">
+                  <aside class="hover-popup">
+                    <h2 class="title" style="color:#d20001;">Special Edition</h2>
+                    <p class="desc">This item means that the pizza you chose has a great chance to be one of the best products we have!</p>
+                  </aside>
+                </div>
+            {% endif %}
+
+            {% if pizza.is_vege %}
+                 <div class="hover-container">
+                  <img src="{% static 'pictures/vege.png' %}" alt="item-logo" class="hover-target">
+                  <aside class="hover-popup">
+                    <h2 class="title" style="color: rgb(0,198,104);">Vege/Fast</h2>
+                    <p class="desc">This item means that the pizza you chose has a high quality vegetarian products and it's good for fasting!</p>
+                  </aside>
+                </div>
+            {% endif %}
+
+            {% if pizza.is_offer %}
+                <div class="hover-container">
+                  <img src="{% static 'pictures/discount.png' %}" alt="item-logo" class="hover-target">
+                  <aside class="hover-popup">
+                    <h2 class="title" style="color: #115d00">Discount</h2>
+                    <p class="desc"><text style="font-size: 80px; color: #115d00">{{ pizza.discount }}%</text></p>
+                  </aside>
+                </div>
+            {% endif %}
+        </div>
+
         <hr class="hr-dotted">
 
         <p class="desc">{{ pizza.ingredients }}</p>
-
 
         <form method="POST" action="{% url 'cart' pizza.pk %}">
             {% csrf_token %}
 
             <div class="size_and_quantity">
-                <label for="size">Size:</label>
-                <select name="size" id="size">
+                <div class="size-container">
                     {% for size, label in pizza.SIZE %}
-                        <option value="{{ size }}">{{ label }}</option>
+                        <label>
+                            <input type="radio" name="size" value="{{ size }}" />
+                            <span class="size-label">{{ label }}</span>
+                        </label>
                     {% endfor %}
-                </select>
+                </div>
 
-                <label for="quantity">Quantity:</label>
-                <input type="number" name="quantity" id="quantity" value="1" min="1">
+                <div class="quantity-container">
+                    <label for="quantity"><b style="color: rgba(0, 0, 0, 0.6);">Quantity:&nbsp;</b></label>
+                    <input type="number" name="quantity" id="quantity" value="1" min="1" class="quantity-input">
+                </div>
             </div>
-
 
             <button type="submit" class="green-button-cart">Add to Cart</button>
         </form>
     </div>
-
 {% endblock %}

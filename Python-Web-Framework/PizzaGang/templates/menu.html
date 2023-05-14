@@ -26,46 +26,40 @@
                 <p>{{ pizza.ingredients|truncatechars:50 }}</p>
             </div>
 
-            <div class="items-container">
+            <div class="hover-target-container">
                 {% if pizza.is_special %}
-
                      <div class="hover-container">
-                      <img src="{% static 'pictures/special.png' %}" alt="special-logo" class="hover-target">
+                      <img src="{% static 'pictures/special.png' %}" alt="item-logo" class="hover-target">
                       <aside class="hover-popup">
                         <h2 class="title">Special Edition</h2>
                         <p class="desc">This item means that the pizza you chose has a great chance to be one of the best products we have!</p>
                       </aside>
                     </div>
-
                 {% endif %}
 
                 {% if pizza.is_vege %}
-
                      <div class="hover-container">
-                      <img src="{% static 'pictures/vege.png' %}" alt="special-logo" class="hover-target">
+                      <img src="{% static 'pictures/vege.png' %}" alt="item-logo" class="hover-target">
                       <aside class="hover-popup">
                         <h2 class="title">Vege/Fast</h2>
                         <p class="desc">This item means that the pizza you chose has a high quality vegetarian products and it's good for fasting!</p>
                       </aside>
                     </div>
-
                 {% endif %}
 
                 {% if pizza.is_offer %}
-
                     <div class="hover-container">
-                      <img src="{% static 'pictures/discount.png' %}" alt="special-logo" class="hover-target">
+                      <img src="{% static 'pictures/discount.png' %}" alt="item-logo" class="hover-target">
                       <aside class="hover-popup">
                         <h2 class="title">Discount</h2>
-                        <p class="desc">This item means that the pizza you chose has a <mark>50%</mark> discount!</p>
+                        <p class="desc">This item means that the pizza you chose has a <mark>{{ pizza.discount }}%</mark> discount!</p>
                       </aside>
                     </div>
-
                 {% endif %}
             </div>
 
-
         </div>
+
         </a>
 
         {% endfor %}
@@ -81,28 +75,33 @@
   padding: 0;
 }
 
-.hover-container {
-  position: relative;
+.hover-target-container {
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    margin-bottom: 5px;
+    margin-right: 5px;
+    margin-left: 5px;
 }
 
 .hover-target {
-  margin-top: 10px;
-  height: 40px;
-  width: 40px;
-  font-size: 2rem;
+    height: 40px;
+    width: 40px;
+    margin-right: 5px;
 }
 
 .hover-popup {
-  margin-top: 7px;
-  font-size: 11px;
-  background-color: #ffffff;
-  border-radius: 8px;
-  padding: 1.5em;
-  transform: scale(0);
-  transition: transform 200ms ease;
-  transform-origin: 8% -10px;
+    position: absolute;
+    width: 180px;
+    font-size: 11px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 1em;
+    transform: scale(0);
+    transition: transform 200ms ease;
+    transform-origin: 8% -10px;
 
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
 }
 
 .title {
