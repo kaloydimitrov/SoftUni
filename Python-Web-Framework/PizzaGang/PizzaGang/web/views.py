@@ -3,9 +3,9 @@ from django.contrib.auth.views import LoginView, LogoutView
 from django.contrib.auth.decorators import login_required
 from django.views.generic import TemplateView, CreateView, ListView, DetailView
 from PizzaGang.web.models import Pizza, Cart
-from PizzaGang.web.forms import CustomUserCreationForm
 from django.urls import reverse_lazy
 
+from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 
 
@@ -29,7 +29,7 @@ class HomeView(TemplateView):
 
 
 class RegisterView(CreateView):
-    form_class = CustomUserCreationForm
+    form_class = UserCreationForm
     template_name = 'register.html'
     context_object_name = 'form'
     success_url = reverse_lazy('home')

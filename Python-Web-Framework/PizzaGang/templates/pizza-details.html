@@ -14,38 +14,40 @@
 
         <img src="{{ pizza.image.url }}" alt="pizza-img" class="pizza-img">
 
-        <div class="item-container-top"></div>
-        <div class="item-container">
-            {% if pizza.is_special %}
-                 <div class="hover-container">
-                  <img src="{% static 'pictures/special.png' %}" alt="item-logo" class="hover-target">
-                  <aside class="hover-popup">
-                    <h2 class="title" style="color:#d20001;">Special Edition</h2>
-                    <p class="desc">This item means that the pizza you chose has a great chance to be one of the best products we have!</p>
-                  </aside>
-                </div>
-            {% endif %}
+        {% if pizza.is_special or pizza.is_vege or pizza.is_offer %}
+            <div class="item-container-top"></div>
+            <div class="item-container">
+                {% if pizza.is_special %}
+                     <div class="hover-container">
+                      <img src="{% static 'pictures/special.png' %}" alt="item-logo" class="hover-target">
+                      <aside class="hover-popup">
+                        <h2 class="title" style="color:#d20001;">Special Edition</h2>
+                        <p class="desc">This item means that the pizza you chose has a great chance to be one of the best products we have!</p>
+                      </aside>
+                    </div>
+                {% endif %}
 
-            {% if pizza.is_vege %}
-                 <div class="hover-container">
-                  <img src="{% static 'pictures/vege.png' %}" alt="item-logo" class="hover-target">
-                  <aside class="hover-popup">
-                    <h2 class="title" style="color: rgb(0,198,104);">Vege/Fast</h2>
-                    <p class="desc">This item means that the pizza you chose has a high quality vegetarian products and it's good for fasting!</p>
-                  </aside>
-                </div>
-            {% endif %}
+                {% if pizza.is_vege %}
+                     <div class="hover-container">
+                      <img src="{% static 'pictures/vege.png' %}" alt="item-logo" class="hover-target">
+                      <aside class="hover-popup">
+                        <h2 class="title" style="color: rgb(0,198,104);">Vege/Fast</h2>
+                        <p class="desc">This item means that the pizza you chose has a high quality vegetarian products and it's good for fasting!</p>
+                      </aside>
+                    </div>
+                {% endif %}
 
-            {% if pizza.is_offer %}
-                <div class="hover-container">
-                  <img src="{% static 'pictures/discount.png' %}" alt="item-logo" class="hover-target">
-                  <aside class="hover-popup">
-                    <h2 class="title" style="color: #115d00">Discount</h2>
-                    <p class="desc"><text style="font-size: 80px; color: #115d00">{{ pizza.discount }}%</text></p>
-                  </aside>
-                </div>
-            {% endif %}
-        </div>
+                {% if pizza.is_offer %}
+                    <div class="hover-container">
+                      <img src="{% static 'pictures/discount.png' %}" alt="item-logo" class="hover-target">
+                      <aside class="hover-popup">
+                        <h2 class="title" style="color: #115d00">Discount</h2>
+                        <p class="desc"><text style="font-size: 80px; color: #115d00">{{ pizza.discount }}%</text></p>
+                      </aside>
+                    </div>
+                {% endif %}
+            </div>
+        {% endif %}
 
         <hr class="hr-dotted">
 

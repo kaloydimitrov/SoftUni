@@ -20,7 +20,7 @@ main {
 
 /*Header*/
 header {
-    background-color: #ffd500;
+    background-color: #f79824;
     height: 100px;
 
     display: flex;
@@ -34,22 +34,30 @@ header {
     margin-left: 100px;
 }
 
-.green-button {
-    background-color: #04AA6D;
-    color: white;
-    padding: 16px;
+.header-buttons {
+    display: flex;
+    justify-content: center;
+
+    margin-left: auto;
+    margin-right: 165px;
+}
+
+.base-button {
+    color: rgba(0, 0, 0, 0.4);
+    padding: 6px;
     font-size: 16px;
-    border-radius: 10px;
+    border-radius: 5px;
     margin-right: 20px;
 }
 
-.green-button:hover {
-    background-color: #115d00;
+.base-button:hover {
+    background-color: #fdca40;
 }
 
-.header-buttons {
-    margin-left: auto;
-    margin-right: 165px;
+.profile-picture {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
 }
 
 /*Footer*/
@@ -68,16 +76,6 @@ footer a {
 }
 
 /*Dropdown Menu*/
-.dropbtn {
-  background-color: #04AA6D;
-  color: white;
-  padding: 16px;
-  font-size: 16px;
-  border-radius: 10px;
-  border: none;
-  margin-right: 20px;
-}
-
 .dropdown {
   position: relative;
   display: inline-block;
@@ -104,5 +102,3 @@ footer a {
 .dropdown-content a:hover {background-color: #ddd; border-radius: 10px;}
 
 .dropdown:hover .dropdown-content {display: block;}
-
-.dropdown:hover .dropbtn {background-color: #3e8e41;}

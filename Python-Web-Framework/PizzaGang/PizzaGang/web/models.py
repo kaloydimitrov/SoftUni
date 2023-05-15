@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import AbstractBaseUser
+from django.contrib.auth.models import User
 
 
 class Pizza(models.Model):
@@ -39,7 +40,7 @@ class Cart(models.Model):
         return f"{self.quantity} {self.pizza}(s) | {self.size}"
 
 
-class CustomUser(AbstractBaseUser):
-    profile_picture = models.ImageField(upload_to='static/pictures/user/profile_pictures/', blank=True, null=True)
+class Profile(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
 
-    USERNAME_FIELD = 'profile_picture'
+    profile_picture = models.ImageField()
