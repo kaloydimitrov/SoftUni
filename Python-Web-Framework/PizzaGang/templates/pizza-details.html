@@ -1,78 +1,66 @@
 {% extends 'base/base.html' %}
 {% load static %}
 
-
 {% block link %}
     <link rel="stylesheet" href="{% static 'css/pizza-details.css' %}">
 {% endblock %}
 
 {% block content %}
     <div class="pizza-details-container">
-        <h1 class="pizza-title-name">❃ {{ pizza.name }} ❃</h1>
+        <h1 class="pizza-title-name"><star class="star">❃</star> {{ pizza.name }} <star class="star">❃</star></h1>
 
         <hr class="hr-dotted">
 
         <img src="{{ pizza.image.url }}" alt="pizza-img" class="pizza-img">
 
-        {% if pizza.is_special or pizza.is_vege or pizza.is_offer %}
-            <div class="item-container-top"></div>
-            <div class="item-container">
-                {% if pizza.is_special %}
-                     <div class="hover-container">
-                      <img src="{% static 'pictures/special.png' %}" alt="item-logo" class="hover-target">
-                      <aside class="hover-popup">
-                        <h2 class="title" style="color:#d20001;">Special Edition</h2>
-                        <p class="desc">This item means that the pizza you chose has a great chance to be one of the best products we have!</p>
-                      </aside>
-                    </div>
-                {% endif %}
-
-                {% if pizza.is_vege %}
-                     <div class="hover-container">
-                      <img src="{% static 'pictures/vege.png' %}" alt="item-logo" class="hover-target">
-                      <aside class="hover-popup">
-                        <h2 class="title" style="color: rgb(0,198,104);">Vege/Fast</h2>
-                        <p class="desc">This item means that the pizza you chose has a high quality vegetarian products and it's good for fasting!</p>
-                      </aside>
-                    </div>
-                {% endif %}
-
-                {% if pizza.is_offer %}
-                    <div class="hover-container">
-                      <img src="{% static 'pictures/discount.png' %}" alt="item-logo" class="hover-target">
-                      <aside class="hover-popup">
-                        <h2 class="title" style="color: #115d00">Discount</h2>
-                        <p class="desc"><text style="font-size: 80px; color: #115d00">{{ pizza.discount }}%</text></p>
-                      </aside>
-                    </div>
-                {% endif %}
-            </div>
-        {% endif %}
-
         <hr class="hr-dotted">
 
         <p class="desc">{{ pizza.ingredients }}</p>
 
-        <form method="POST" action="{% url 'cart' pizza.pk %}">
+        <div class="pizza-price-container">
+            <h1 style="margin: 0" id="pizza-price">{{ pizza.price|floatformat:2 }}</h1>
+            <h1 style="margin: 0" class="price-price">лв</h1>
+        </div>
+
+        <form id="pizza-form" method="POST" action="{% url 'cart' pizza.pk %}">
             {% csrf_token %}
 
             <div class="size_and_quantity">
                 <div class="size-container">
                     {% for size, label in pizza.SIZE %}
-                        <label>
-                            <input type="radio" name="size" value="{{ size }}" />
-                            <span class="size-label">{{ label }}</span>
-                        </label>
+                        {% if size == 'ME' %}
+                            <label>
+                                <input type="radio" name="size" value="{{ size }}" checked />
+                                <span class="size-label">{{ label }}</span>
+                            </label>
+                        {% else %}
+                            <label>
+                                <input type="radio" name="size" value="{{ size }}" />
+                                <span class="size-label">{{ label }}</span>
+                            </label>
+                        {% endif %}
                     {% endfor %}
                 </div>
 
                 <div class="quantity-container">
                     <label for="quantity"><b style="color: rgba(0, 0, 0, 0.6);">Quantity:&nbsp;</b></label>
-                    <input type="number" name="quantity" id="quantity" value="1" min="1" class="quantity-input">
+                    <input type="number" name="quantity" id="quantity" value="1" min="1" class="quantity-input" onchange="updatePrice()">
                 </div>
             </div>
 
             <button type="submit" class="green-button-cart">Add to Cart</button>
         </form>
     </div>
+
+    <script>
+        function updatePrice() {
+            const quantityInput = document.getElementById('quantity');
+            const priceElement = document.getElementById('pizza-price');
+            const price = parseFloat("{{ pizza.price }}");
+            const quantity = parseInt(quantityInput.value);
+            const totalPrice = price * quantity;
+
+            priceElement.textContent = totalPrice.toFixed(2);
+        }
+    </script>
 {% endblock %}

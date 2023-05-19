@@ -18,7 +18,7 @@ class Pizza(models.Model):
     name = models.CharField(max_length=30)
     ingredients = models.TextField()
     image = models.ImageField(upload_to='static/pictures/pizza/', blank=True, null=True)
-    size = models.CharField(max_length=30, choices=SIZE, blank=True, null=True)
+    size = models.CharField(max_length=30, choices=SIZE, blank=True, null=True, default=ME)
     price = models.FloatField(default=0)
 
     is_special = models.BooleanField(blank=True, null=True)
@@ -33,7 +33,7 @@ class Pizza(models.Model):
 
 class Cart(models.Model):
     pizza = models.ForeignKey(Pizza, on_delete=models.CASCADE)
-    size = models.CharField(max_length=50)
+    size = models.CharField(max_length=50, default=Pizza.ME)
     quantity = models.PositiveIntegerField()
 
     def __str__(self):

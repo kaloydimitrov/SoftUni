@@ -19,17 +19,33 @@
     font-size: 40px;
 }
 
+.star {
+    color: rgb(255, 145, 0);
+}
+
 .pizza-img {
     margin-top: 13px;
+}
+
+.pizza-price-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 19px;
+    color: #04aa6d;
+    margin-left: auto;
+    margin-right: auto;
+
+    margin-top: 8px;
+    margin-bottom: 8px;
 }
 
 .green-button-cart {
     box-sizing: border-box;
     background-color: #04aa6d;
     color: white;
-    border-radius: 20px;
+    border-radius: 30px;
     border: 0;
-    margin-top: 10px;
     margin-left: 700px;
 
     padding: 30px;
@@ -62,23 +78,11 @@
     color: rgba(0, 0, 0, 0.6);
 }
 
-.item-container-top {
-    padding-top: 30px;
-    background: rgba(255, 213, 0, 0.75) linear-gradient(to bottom, white, transparent 90%);
-}
-
-.item-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    padding-top: 20px;
-    background: rgba(255, 213, 0, 0.75) linear-gradient(to top, white, transparent 95%);
-}
-
 /*Size and Quantity*/
 .size_and_quantity {
     position: absolute;
-    margin-top: 40px;
-    margin-left: 70px;
+    margin-top: 20px;
+    margin-left: 50px;
 }
 
 .size_and_quantity {

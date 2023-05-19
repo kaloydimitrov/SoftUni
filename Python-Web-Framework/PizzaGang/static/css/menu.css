@@ -12,7 +12,6 @@ hr {
 
 
 /*Pizza Box */
-
 .pizza-box-main-container {
     display: flex;
     justify-content: center;
@@ -22,7 +21,7 @@ hr {
 
 .pizza-box-container {
     position: relative;
-    height: 265px;
+    height: 275px;
     width: 170px;
 
     border-radius: 7px;
@@ -39,7 +38,7 @@ hr {
 }
 
 .pizza-box-container:hover {
-    height: 275px;
+    height: 285px;
     width: 180px;
 }
 

@@ -8,14 +8,19 @@ from django.urls import reverse_lazy
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 
+from django.views.generic.base import ContextMixin
 
-class BaseView(TemplateView):
+
+class BaseView(ContextMixin, TemplateView):
     template_name = 'base/base.html'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['user'] = self.request.user
-        context['cart'] = Cart.objects.get()
+
+        cart_items = Cart.objects.all()
+        context['cart_items'] = cart_items
+
         return context
 
 
