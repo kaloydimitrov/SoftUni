@@ -75,13 +75,23 @@ def add_to_cart(request, pizza_pk):
         cart = Cart(pizza=pizza, size=size, quantity=quantity)
         cart.save()
 
-        return redirect('home')
+        return redirect('menu')
 
     return render(request, 'pizza-details.html', )
 
 
-class UserDetails(DetailView):
-    template_name = 'user-details.html'
+class UserInfoBase(DetailView):
+    template_name = 'user-info-base.html'
+    model = User
+
+
+class UserInfoDetails(DetailView):
+    template_name = 'user-info-details.html'
+    model = User
+
+
+class UserInfoAddress(DetailView):
+    template_name = 'user-info-address.html'
     model = User
 
 

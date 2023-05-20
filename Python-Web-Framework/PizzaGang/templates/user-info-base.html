@@ -1,0 +1,34 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block link %}
+    <link rel="stylesheet" href="{% static 'css/user-info-base.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="nav-bar">
+
+    <a href="{% url 'user-details' user.pk %}" class="base-large-button">
+        <h1>DETAILS</h1>
+    </a>
+
+    <a href="" class="base-large-button">
+        <h1>ADDRESS</h1>
+    </a>
+
+    <a href="" class="base-large-button">
+        <h1>ORDERS</h1>
+    </a>
+
+    <a href="" class="base-large-button">
+        <h1>HISTORY</h1>
+    </a>
+
+</div>
+
+<div class="main-details">
+{% block user_content %}
+{% endblock %}
+</div>
+
+{% endblock %}

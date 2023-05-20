@@ -43,4 +43,11 @@ class Cart(models.Model):
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
 
-    profile_picture = models.ImageField()
+    profile_picture = models.ImageField(upload_to='static/pictures/profile/')
+    first_name = models.CharField(max_length=30, blank=True, null=True)
+    last_name = models.CharField(max_length=30, blank=True, null=True)
+
+    address = models.TextField()
+
+    def __str__(self):
+        return f'{self.first_name} {self.last_name}'

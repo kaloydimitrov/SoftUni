@@ -22,7 +22,6 @@ main {
 header {
     background-color: #f79824;
     height: 100px;
-
     display: flex;
 
     border-bottom: 4px solid rgba(0, 0, 0, 0.4);
@@ -38,7 +37,7 @@ header {
 .logo {
     width: 80px;
 
-    /*Needs a Fix*/
+    /*TODO: Needs a Fix*/
     margin-left: 80px;
     margin-right: 1400px;
 }
@@ -91,17 +90,17 @@ footer a {
 .dropdown {
   position: relative;
   display: inline-block;
-
 }
 
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: #f1f1f1;
+  background-color: #ffffff;
   min-width: 160px;
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
   z-index: 1;
-  border-radius: 10px;
+  border-radius: 6px;
+  border: 1px solid rgba(51, 51, 51, 0.5);
 }
 
 .dropdown-content a {
@@ -111,9 +110,18 @@ footer a {
   display: block;
 }
 
-.dropdown-content a:hover {background-color: #ddd; border-radius: 10px;}
+.dropdown-content a:hover {
+    background-color: rgba(51, 51, 51, 0.5);
+    color: white;
+}
 
-.dropdown:hover .dropdown-content {display: block;}
+.dropdown-hr {
+    background-color: rgba(51, 51, 51, 0.5);
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
 
 /*Popup Window*/
 .overlay {

@@ -37,10 +37,13 @@
 
         {% if user.is_authenticated %}
            <div class="dropdown">
-              <img src="{% static 'pictures/background.jpg' %}" alt="profile-picture" class="base-button" id="profile-picture">
+              <img src="{{ user.profile.profile_picture.url }}" alt="profile-picture" class="base-button" id="profile-picture">
               <div class="dropdown-content">
-                <a href="{% url 'user-details' user.pk %}">Profile</a>
-                <a href="{% url 'sign-out' %}">Sign Out</a>
+                <a href="{% url 'user-details' user.pk %}" style="border-top-left-radius: 5px; border-top-right-radius: 5px;">Profile</a>
+                <a href="{% url 'user-details' user.pk %}">Address</a>
+                <a href="{% url 'user-details' user.pk %}">Orders</a>
+                <hr class="dropdown-hr">
+                <a href="{% url 'sign-out' %}" style="border-bottom-left-radius: 5px; border-bottom-right-radius: 5px;">Sign Out</a>
               </div>
             </div>
         {% else %}

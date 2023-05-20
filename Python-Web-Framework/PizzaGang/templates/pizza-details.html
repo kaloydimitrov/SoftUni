@@ -10,6 +10,7 @@
         <h1 class="pizza-title-name"><star class="star">❃</star> {{ pizza.name }} <star class="star">❃</star></h1>
 
         <hr class="hr-dotted">
+        <a class="close" href="{% url 'menu' %}">&times;</a>
 
         <img src="{{ pizza.image.url }}" alt="pizza-img" class="pizza-img">
 

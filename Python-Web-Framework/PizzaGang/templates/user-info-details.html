@@ -1,0 +1,28 @@
+{% extends 'user-info-base.html' %}
+
+{% block user_content %}
+
+
+<img src="{{ user.profile.profile_picture.url }}" class="my-img" alt="profile-picture">
+<h2>{{ user.profile.first_name }} {{ user.profile.last_name }}</h2>
+
+
+<style>
+.my-img {
+margin-top: 50px;
+margin-left: 50px;
+
+width: 500px;
+height: 500px;
+object-fit: cover;
+border-radius: 10px;
+}
+
+h2 {
+    font-size: 100px;
+    color: rgba(51, 51, 51, 0.81);
+    margin-left: 50px;
+}
+
+</style>
+{% endblock %}

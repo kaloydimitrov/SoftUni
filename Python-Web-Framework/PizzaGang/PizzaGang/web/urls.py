@@ -1,6 +1,6 @@
 from django.urls import path, include
 from PizzaGang.web.views import HomeView, RegisterView, SignInView, SignOutView, ListPizzaView, DetailPizzaView, \
-                                add_to_cart, UserDetails
+                                add_to_cart, UserInfoAddress, UserInfoBase
 
 urlpatterns = [
     path('', HomeView.as_view(), name='home'),
@@ -19,5 +19,8 @@ urlpatterns = [
     ])),
 
 
-    path('user-details/<int:pk>/', UserDetails.as_view(), name='user-details'),
+    path('user-info/',include([
+        path('details/<int:pk>/', UserInfoAddress.as_view(), name='user-details'),
+        path('address')
+    ])),
 ]
