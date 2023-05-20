@@ -12,19 +12,26 @@
 <body>
 <header>
 
-
-
     <div class="base-buttons-container">
         <a href="{% url 'home' %}">
             <img src="{% static 'pictures/logo.png' %}" alt="logo" class="logo">
         </a>
 
 
-        <a href="" class="base-button"><b>🛒 CART</b>
-            {% if cart_items.count > 0 %}
+        <a class="base-button" id="button" href="#popup1"><b>🛒 CART</b>
+            {#TODO: Fix#}
+            {% if cart.count > 0 %}
                 <img src="{% static 'pictures/red-dot.png' %}" alt="red-dot" class="red-dot">
             {% endif %}
         </a>
+
+
+        <div id="popup1" class="overlay">
+            <div class="popup">
+                <a class="close" href="#">&times;</a>
+            </div>
+        </div>
+
 
         <a href="{% url 'menu' %}" class="base-button"><b>MENU</b></a>
 
@@ -41,9 +48,8 @@
         {% endif %}
     </div>
 
-
-
 </header>
+
 <main>
 {% block content %}
 {% endblock %}
