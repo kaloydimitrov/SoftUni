@@ -4,10 +4,27 @@
 
 
 <img src="{{ user.profile.profile_picture.url }}" class="my-img" alt="profile-picture">
-<h2>{{ user.profile.first_name }} {{ user.profile.last_name }}</h2>
+<div class="container">
+
+<h2>Name: {{ user.profile.first_name }} {{ user.profile.last_name }}</h2>
+
+</div>
+
 
 
 <style>
+.container {
+margin-top: 50px;
+margin-left: 50px;
+
+width: 1000px;
+height: 500px;
+
+background-color: #fdca40;
+border: 5px solid rgba(0, 0, 0, 0.4);
+border-radius: 10px;
+}
+
 .my-img {
 margin-top: 50px;
 margin-left: 50px;
@@ -15,13 +32,14 @@ margin-left: 50px;
 width: 500px;
 height: 500px;
 object-fit: cover;
+border: 3px solid rgba(0, 0, 0, 0.4);
 border-radius: 10px;
 }
 
 h2 {
-    font-size: 100px;
-    color: rgba(51, 51, 51, 0.81);
-    margin-left: 50px;
+font-size: 70px;
+color: rgba(51, 51, 51, 0.81);
+margin-left: 50px;
 }
 
 </style>

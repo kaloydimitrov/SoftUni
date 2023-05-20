@@ -12,15 +12,15 @@
         <h1>DETAILS</h1>
     </a>
 
-    <a href="" class="base-large-button">
+    <a href="{% url 'user-address' user.pk %}" class="base-large-button">
         <h1>ADDRESS</h1>
     </a>
 
-    <a href="" class="base-large-button">
+    <a href="{% url 'user-orders' user.pk %}" class="base-large-button">
         <h1>ORDERS</h1>
     </a>
 
-    <a href="" class="base-large-button">
+    <a href="{% url 'user-history' user.pk %}" class="base-large-button">
         <h1>HISTORY</h1>
     </a>
 

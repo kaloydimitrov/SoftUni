@@ -95,5 +95,15 @@ class UserInfoAddress(DetailView):
     model = User
 
 
+class UserInfoOrders(DetailView):
+    template_name = 'user-info-orders.html'
+    model = User
+
+
+class UserInfoHistory(DetailView):
+    template_name = 'user-info-history.html'
+    model = User
+
+
 def handler404(request, exception=None):
     return render(request, '404.html', status=404)

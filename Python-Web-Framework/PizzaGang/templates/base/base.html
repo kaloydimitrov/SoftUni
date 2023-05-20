@@ -40,8 +40,9 @@
               <img src="{{ user.profile.profile_picture.url }}" alt="profile-picture" class="base-button" id="profile-picture">
               <div class="dropdown-content">
                 <a href="{% url 'user-details' user.pk %}" style="border-top-left-radius: 5px; border-top-right-radius: 5px;">Profile</a>
-                <a href="{% url 'user-details' user.pk %}">Address</a>
-                <a href="{% url 'user-details' user.pk %}">Orders</a>
+                <a href="{% url 'user-address' user.pk %}">Address</a>
+                <a href="{% url 'user-orders' user.pk %}">Orders</a>
+                <a href="{% url 'user-history' user.pk %}">History</a>
                 <hr class="dropdown-hr">
                 <a href="{% url 'sign-out' %}" style="border-bottom-left-radius: 5px; border-bottom-right-radius: 5px;">Sign Out</a>
               </div>
