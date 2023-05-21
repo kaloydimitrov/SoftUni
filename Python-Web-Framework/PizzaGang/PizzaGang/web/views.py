@@ -44,16 +44,6 @@ class SignInView(LoginView):
 class SignOutView(LogoutView):
     next_page = reverse_lazy('home')
 
-
-class UserInfoView(TemplateView):
-    template_name = 'user-info.html'
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context['user'] = self.request.user
-        return context
-
-
 class ListPizzaView(ListView):
     template_name = 'menu.html'
     model = Pizza
