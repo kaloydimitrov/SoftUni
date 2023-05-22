@@ -54,15 +54,6 @@ header {
     background-color: #fdca40;
 }
 
-.red-dot {
-    position: absolute;
-
-    width: 10px;
-    height: 10px;
-
-    top: 32px;
-}
-
 #profile-picture {
     border-radius: 100%;
     border: 2px solid rgba(0, 0, 0, 0.4);
@@ -128,7 +119,7 @@ footer a {
 /*Popup Window*/
 .overlay {
 position: fixed;
-z-index: 1;
+z-index: 1000;
 
 top: 0;
 bottom: 0;

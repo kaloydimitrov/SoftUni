@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.views import LoginView, LogoutView
 from django.contrib.auth.decorators import login_required
 from django.views.generic import TemplateView, CreateView, ListView, DetailView
-from PizzaGang.web.models import Pizza, Cart
+from PizzaGang.web.models import Pizza, Cart, Offers
 from django.urls import reverse_lazy
 
 from django.contrib.auth.forms import UserCreationForm
@@ -26,6 +26,7 @@ class HomeView(TemplateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['pizzas'] = Pizza.objects.all()
+        context['offers'] = Offers.objects.all()
         return context
 
 
@@ -43,6 +44,7 @@ class SignInView(LoginView):
 
 class SignOutView(LogoutView):
     next_page = reverse_lazy('home')
+
 
 class ListPizzaView(ListView):
     template_name = 'menu.html'

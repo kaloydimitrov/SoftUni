@@ -18,18 +18,15 @@
         </a>
 
 
-        <a class="base-button" id="button" href="#popup1"><b>🛒 CART</b>
-            {#TODO: Fix#}
-            {% if cart.count > 0 %}
-                <img src="{% static 'pictures/red-dot.png' %}" alt="red-dot" class="red-dot">
-            {% endif %}
-        </a>
+        <a class="base-button" id="button" href="#popup1"><b>🛒 CART</b></a>
 
 
         <div id="popup1" class="overlay">
             <div class="popup">
                 <a class="close" href="#">&times;</a>
-                
+                {% for item in cart %}
+                    <h1>{{ item.quantity }}</h1>
+                {% endfor %}
             </div>
         </div>
 
