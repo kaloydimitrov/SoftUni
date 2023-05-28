@@ -1,0 +1,13 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+
+<form action="{% url 'task-update' %}">
+{% csrf_token %}
+
+{{ form }}
+
+<button type="submit">Update</button>
+</form>
+
+{% endblock %}
