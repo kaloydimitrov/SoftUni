@@ -17,14 +17,13 @@ class Pizza(models.Model):
 
     name = models.CharField(max_length=30)
     ingredients = models.TextField()
-    image = models.ImageField(upload_to='static/pictures/pizza/', blank=True, null=True)
-    size = models.CharField(max_length=30, choices=SIZE, blank=True, null=True, default=ME)
-    price = models.FloatField(default=0)
+    image = models.ImageField(upload_to='static/pictures/pizza/')
+    size = models.CharField(max_length=30, choices=SIZE, default=PE)
+    price = models.FloatField()
 
     is_special = models.BooleanField(blank=True, null=True)
     is_offer = models.BooleanField(blank=True, null=True)
     is_vege = models.BooleanField(blank=True, null=True)
-
     discount = models.IntegerField(blank=True, null=True)
 
     def __str__(self):
