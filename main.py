@@ -1,15 +1,43 @@
-from project.horse_race_app import HorseRaceApp
+days = int(input()) - 1
+room_type = input()
+review = input()
 
-horseRaceApp = HorseRaceApp()
-print(horseRaceApp.add_horse("Appaloosa", "Spirit", 80))
-print(horseRaceApp.add_horse("Thoroughbred", "Rocket", 110))
-print(horseRaceApp.add_jockey("Peter", 19))
-print(horseRaceApp.add_jockey("Mariya", 21))
-print(horseRaceApp.create_horse_race("Summer"))
-print(horseRaceApp.add_horse_to_jockey("Peter", "Appaloosa"))
-print(horseRaceApp.add_horse_to_jockey("Peter", "Thoroughbred"))
-print(horseRaceApp.add_horse_to_jockey("Mariya", "Thoroughbred"))
-print(horseRaceApp.add_jockey_to_horse_race("Summer", "Mariya"))
-print(horseRaceApp.add_jockey_to_horse_race("Summer", "Peter"))
-print(horseRaceApp.add_jockey_to_horse_race("Summer", "Mariya"))
-print(horseRaceApp.start_horse_race("Summer"))
+final_price = 0
+
+
+def apply_discount():
+    global final_price
+
+    if room_type == 'apartment':
+        if days < 10:
+            final_price *= 0.70
+        elif 10 < days < 15:
+            final_price *= 0.65
+        elif days > 15:
+            final_price *= 0.50
+    elif room_type == 'president apartment':
+        if days < 10:
+            final_price *= 0.90
+        elif 10 < days < 15:
+            final_price *= 0.85
+        elif days > 15:
+            final_price *= 0.80
+
+
+if room_type == 'room for one person':
+    final_price += 18 * days
+    apply_discount()
+elif room_type == 'apartment':
+    final_price += 25 * days
+    apply_discount()
+elif room_type == 'president apartment':
+    final_price += 35 * days
+    apply_discount()
+
+
+if review == 'positive':
+    final_price *= 1.25
+elif review == 'negative':
+    final_price *= 0.90
+
+print(f"{final_price:.2f}")
