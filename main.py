@@ -1,61 +1,49 @@
-calculations = {
-    'add': lambda x, y: x + y,
-    'subtract': lambda x, y: x - y,
-    'divide': lambda x, y: x / y,
-    'multiply': lambda x, y: x * y
-}
+# TODO: Decorators: Done
+# TODO: *args, **kwargs: Done
+# TODO: Error Handling
+# TODO: Iterators and Generators
 
-print(calculations['add'](2, 2))
-print(calculations['subtract'](2, 2))
-print(calculations['divide'](2, 2))
-print(calculations['multiply'](2, 2))
-
-print('---------------------------------------------------------------------------------------')
-
-import time
-import math
+from datetime import datetime
 
 
-def calculate_time(func):
-    def inner1(*args, **kwargs):
-        begin = time.time()
+def time_decorator(func):
+    def wrapper():
+        func()
 
-        func(*args, **kwargs)
+        current_time = datetime.now().strftime("%H:%M:%S")
+        print("Current Time: ", current_time)
 
-        end = time.time()
-        print("Total time taken in : ", func.__name__, end - begin)
-
-    return inner1
+    return wrapper
 
 
-@calculate_time
-def factorial(num):
-    time.sleep(2)
-    print(math.factorial(num))
+@time_decorator
+def print_function():
+    user_input = input('Enter meaningless text: ')
+    print('Your text is:', user_input)
 
 
-factorial(10)
+print_function()
 
-print('---------------------------------------------------------------------------------------')
-
-print("yes", "no", "yes")
-
-print("yes", end="\n\n")
-print("no", end="\n\n")
-print("yes", end="\n\n")
-
-print('---------------------------------------------------------------------------------------')
+print('\n------------------------------------------------------\n')
 
 
-def make_order(price, *args, **kwargs):
-    print(price, end='; ')
-    [print(item, end=' ') for item in args]
-
-    for key, value in kwargs.items():
-        if key == 'is_active':
-            print(f"\nActive: {value}")
-        elif key == 'is_offer':
-            print(f"\nOffer: {value}")
+def myFun(arg1, arg2, arg3):
+    print("arg1:", arg1)
+    print("arg2:", arg2)
+    print("arg3:", arg3)
 
 
-make_order(67, 'Jonathan White - T-shirt', 'Armani - Shorts', 'Rolex g255 - Watch', is_active=True, is_offer=True, teea=True)
+args = ("Geeks", "for", "Geeks")
+myFun(*args)
+myFun('I', 'say', 'Yes')
+
+print('++++++++-%-++++++++')
+
+kwargs = {"arg1": "Geeks", "arg2": "for", "arg3": "Geeks"}
+myFun(**kwargs)
+myFun(arg1='I', arg2='say', arg3='Yes')
+
+print('\n------------------------------------------------------\n')
+
+
+
