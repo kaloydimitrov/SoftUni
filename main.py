@@ -1,14 +1,14 @@
+# TODO: OOP: Done
 # TODO: Decorators: Done
 # TODO: *args, **kwargs: Done
 # TODO: Slicing: Done
 # TODO: Tuples and Sets: Done
 # TODO: Getters and Setters: Done
+# TODO: Iterators and Generators: Done
+# TODO: Error Handling: Done
 # TODO: Magic Methods
 # TODO: Recursion (YouTube)
-# TODO: Iterators and Generators
-# TODO: Error Handling
 # TODO: Unittest
-# TODO: OOP: Done
 # Django Testing
 
 from datetime import datetime
@@ -210,3 +210,39 @@ except ValueError as error:
 print('\n------------------------------------------------------\n')
 
 
+class Range:
+    def __init__(self, end_num):
+        self.end_num = end_num
+
+    def __iter__(self):
+        self.start_num = -1
+        return self
+
+    def __next__(self):
+        self.start_num += 1
+
+        if self.start_num >= self.end_num:
+            raise StopIteration
+
+        return self.start_num
+
+
+for i in Range(10):
+    print(i)
+
+print('\n------------------------------------------------------\n')
+
+
+def mygen():
+    print('First item')
+    yield 10
+
+    print('Second item')
+    yield 20
+
+    print('Last item')
+    yield 30
+
+
+for i in mygen():
+    print(i)
