@@ -6,7 +6,7 @@
 # TODO: Getters and Setters: Done
 # TODO: Iterators and Generators: Done
 # TODO: Error Handling: Done
-# TODO: Magic Methods
+# TODO: Magic Methods: Done
 # TODO: Recursion (YouTube)
 # TODO: Unittest
 # Django Testing
@@ -246,3 +246,43 @@ def mygen():
 
 for i in mygen():
     print(i)
+
+print('\n--------------------------- Design Patterns ---------------------------\n')
+
+# Factory Design Pattern
+from abc import ABC, abstractmethod
+
+
+class Shape(ABC):
+    @abstractmethod
+    def draw(self):
+        pass
+
+
+class Circle(Shape):
+    def draw(self):
+        print("Drawing a circle")
+
+
+class Rectangle(Shape):
+    def draw(self):
+        print("Drawing a rectangle")
+
+
+class ShapeFactory:
+    def create_shape(self, shape_type):
+        if shape_type == "circle":
+            return Circle()
+        elif shape_type == "rectangle":
+            return Rectangle()
+        else:
+            raise ValueError("Invalid shape type")
+
+
+factory = ShapeFactory()
+
+circle = factory.create_shape("circle")
+circle.draw()
+
+rectangle = factory.create_shape("rectangle")
+rectangle.draw()
