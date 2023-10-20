@@ -1,0 +1,176 @@
+@import url("https://fonts.googleapis.com/css?family=PT+Sans|PT+Serif");
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: 'PT Sans', sans-serif;
+}
+
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 55px;
+    background-color: red;
+    color: white;
+}
+
+.top-bar ul {
+    display: flex;
+    gap: 10px;
+}
+
+.top-bar ul li {
+    display: block;
+}
+
+.section-hero {
+    position: relative;
+    height: 40em;
+    background-color: purple;
+}
+
+.section-hero img {
+    display: blocks;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.section-hero nav {
+    position: absolute;
+    top: 30px;
+    right: 50px;
+}
+
+.section-hero nav ul {
+    display: flex;
+    gap: 40px;
+}
+
+.section-hero nav ul li {
+    display: block;
+}
+
+.section-hero nav ul li a {
+    text-decoration: none;
+    color: white;
+}
+
+.main-text-container {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: white;
+}
+
+.main-text-container h2 {
+    font-size: 50px;
+    letter-spacing: 10px;
+    margin-bottom: 36px;
+}
+
+.main-text-container p {
+    max-width: 480px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.main-text-container a {
+    text-decoration: none;
+    color: white;
+    padding: 0.5em 1.3em;
+    background-color: red;
+    border-radius: 8px;
+    font-size: 0.8em;
+    font-weight: bold;
+}
+
+.section-welcome h3, .section-coaches h3 {
+    text-align: center;
+    font-size: 1.8em;
+}
+
+.box {
+    display: flex;
+    justify-content: center;
+}
+
+.box .item {
+    height: 4px;
+    width: 60px;
+    background-color: red;
+    border-radius: 3px;
+    margin: 30px 0 30px 0;
+}
+
+.section-welcome, .section-coaches {
+    padding: 30px;
+}
+
+.bottom-bar {
+    text-align: center;
+    padding: 12px;
+    background-color: red;
+}
+
+.flex-container-welcome {
+    display: flex;
+    justify-content: space-around;
+}
+
+.flex-container-welcome section {
+    max-width: 300px;
+    text-align: center;
+}
+
+.flex-container-welcome section img {
+    width: 80px;
+}
+
+.flex-container-welcome section h4 {
+    color: red;
+    padding: 20px;
+}
+
+.section-coaches {
+    background-color: rgb(241, 241, 241);
+    padding-bottom: 70px;
+}
+
+.flex-container-coaches {
+    display: flex;
+    justify-content: space-around;
+}
+
+.flex-container-coaches section {
+    max-width: 300px;
+    text-align: center;
+}
+
+.flex-container-coaches section img {
+    border-radius: 7px;
+}
+
+.flex-container-coaches section h4 {
+    margin-top: 10px;
+}
+
+.flex-container-coaches section h5 {
+    margin-top: 10px;
+    color: red;
+}
+
+.flex-container-coaches section p {
+    margin-top: 14px;
+    color: rgb(179, 179, 179);
+}
