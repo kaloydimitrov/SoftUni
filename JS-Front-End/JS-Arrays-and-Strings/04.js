@@ -1,14 +1,7 @@
-function censoredWords(input, word) {
-    inputArray = input.split(" ");
-    wordIndex = inputArray.indexOf(word);
-    newWord = "";
-
-    for (let i = 0; i < word.length; i++) {
-        newWord += "*";
-    }
-
-    inputArray[wordIndex] = newWord;
-    console.log(inputArray.join(" "));
+function substring(text, n1, n2) {
+    let textArray = text.split("");
+    let splicedArray = textArray.slice(n1, n2 + 1);
+    console.log(splicedArray.join(""));
 }
 
-censoredWords('Find the hidden word', 'hidden');
+substring('SkipWord', 4, 7);
