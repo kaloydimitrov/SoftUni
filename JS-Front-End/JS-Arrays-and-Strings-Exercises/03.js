@@ -6,4 +6,4 @@ function sortAlph(array) {
     }
 }
 
-sortAlph(["John", "Bob", "Christina", "Ema"]);
+sortAlph(["John", "Bob", "Christina", "Ema", "A", "BA"]);

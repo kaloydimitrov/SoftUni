@@ -5,9 +5,11 @@ function printNthElement(array, step) {
         newArray.push(array[i]);
     }
 
-    for (let i = 0; i < newArray.length; i++) {
-        console.log(newArray[i]);
-    }
+    console.log(newArray);
+
+    // for (let i = 0; i < newArray.length; i++) {
+    //     console.log(newArray[i]);
+    // }
 }
 
 printNthElement(['dsa', 'asd', 'test', 'tset'], 2);
