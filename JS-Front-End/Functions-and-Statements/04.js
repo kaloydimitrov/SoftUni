@@ -14,7 +14,7 @@ function orders(product, quantity) {
         totalPrice = 2.00 * quantity;
     }
 
-    console.log(totalPrice);
+    console.log(totalPrice.toFixed(2));
 }
 
 orders("coffee", 2);

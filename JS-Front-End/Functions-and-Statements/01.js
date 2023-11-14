@@ -20,4 +20,4 @@ function formatGrade(grade) {
     console.log(`${gradeWord} (${grade.toFixed(2)})`);
 }
 
-formatGrade(4.50);
+formatGrade(2.00);
