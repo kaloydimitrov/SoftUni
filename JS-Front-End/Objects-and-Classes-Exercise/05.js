@@ -3,10 +3,6 @@ function inventory(inputArray) {
 
     for (let inputString of inputArray) {
         let [Hero, level, items] = inputString.split(" / ");
-
-        items = items.split(", ");
-        items.sort();
-        items = items.join(", ");
         heros.unshift({ Hero, level, items });
     }
 
